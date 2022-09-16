@@ -26,4 +26,4 @@ theme:
     - toc.follow
 
 site_name: Cisco NX-OS Programmability
-repo_url: https://github.com/nmortari/NexusProgrammability
+repo_url: https://github.com/CiscoSE/NexusProgrammability
