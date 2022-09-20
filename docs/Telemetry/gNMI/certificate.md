@@ -203,7 +203,7 @@ cat intermediate/certs/intermediate.cert.pem >> intermediate/certs/admin.chain.c
 cat certs/ca.cert.pem >> intermediate/certs/admin.chain.cert.pem
 ```
 
-### Import the CA certificate 
+#### Import the CA certificate 
 
 For this example, gnmi-root is used as trustpoint name but it can have any name. Use the content of the root certificate only (certs/ca.cert.pem) - no chains or intermediate certs are required
 
