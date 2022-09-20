@@ -19,7 +19,7 @@ NX-OS supports two types of certificates for gRPC:
 
 A server certificate will allow you to connect to a NX-OS device securely, without need of skipping TLS verification for TLS connections. 
 
-> It is assumed that you have a valid root and intermediate CA certificates. Instructions can be found at the top of this article on how to set that up 
+> It is assumed that you have a valid root and intermediate CA certificates installed in your workstation. Instructions can be found at the top of this article on how to set that up 
 
 #### Add the subjectAltName setting 
 
@@ -54,6 +54,7 @@ export SAN=DNS:nx9300v-01,DNS:nx9300v-01.cisco.com,IP:192.168.1.1
 Altough the file name is trivial, it is a best practice to use the hostname of the device or other identifier that sumarizes the purpuse of the certificate. 
 
 > You can use the same certificate for multiple devices
+
 > Make sure to use server_cert extensions
 
 ```bash
@@ -79,7 +80,7 @@ Check that the alternative name section is present and has the values set in the
 ```bash
 openssl x509 -noout -text -in intermediate/certs/nx9300v-01.cisco.com.cert.pem
 ```
-#### Create certificate chain
+#### Create the certificate chain
 
 ```bash
 cat intermediate/certs/nx9300v-01.cisco.com.cert.pem > intermediate/certs/nx9300v-01.cisco.com.chain.cert.pem
@@ -96,21 +97,21 @@ scp intermediate/certs/nx9300v-01.cisco.com.pfk  admin@192.168.1.1:
 ```
 #### Import the pkcs12 file 
 
-For this example, "supersecret" was used as password the step before 
+Execute the following commands on the device. For this example, "supersecret" was used as password the step before 
 
 ```cli
-configure
-crypto ca trustpoint server
-crypto ca import server pkcs12 bootflash:nx9300v-01.cisco.com.pfk supersecret
+nx9300v_01# configure
+nx9300v_01(config)# crypto ca trustpoint server
+nx9300v_01(config)# crypto ca import server pkcs12 bootflash:nx9300v-01.cisco.com.pfk supersecret
 ```
 
-Configure grpc to use that truspoint:
+Configure grpc to use the truspoint above:
 ```
-grpc certificate server
+nx9300v_01(config)# grpc certificate server
 ```
 #### Test with gnmic
 
-Use the certificate chains files, not the standalone certificate file. The --skip-verify option should not be needed
+Use the certificate chain file, not the standalone certificate file. The --skip-verify option should not be needed
 
 ```
 # gnmic -a nx9300v-01.cisco.com:50051 -u admin -p YOURPASSWORD get --path /System/name --tls-cert intermediate/certs/nx9300v-01.cisco.com.chain.cert.pem --tls-key intermediate/private/nx9300v-01.cisco.com.key.pem -e json --tls-ca intermediate/certs/ca-chain.cert.pem 
@@ -164,16 +165,18 @@ if __name__ == '__main__':
 
 ## Client certificate
 
-If you prefer to use a certificate instead of a password, you can create a client certificate that can be used to authenticate against the NX-OS device.
+If you prefer to use a certificate and key instead of a password, you can create a client certificate that can be used to authenticate against the NX-OS device.
 
-> It is assumed that you have a valid root and intermediate CA certificates. Instructions can be found at the top of this article on how to set that up 
+> It is assumed that you have a valid root and intermediate CA certificates installed in your workstation. Instructions can be found at the top of this article on how to set that up 
 
 #### Create key and certificate
 
 Altough the file name is trivial, it is a best practice to use the username or other identifier that sumarizes the purpuse of the certificate, csr and keys. 
 
 > You can use the same certificate to login to multiple devices with the same username
+
 > Make sure to use usr_cert extensions
+
 > Use the username as value for _Common Name_ and _Organizational Unit Name_
 
 ```
@@ -192,7 +195,7 @@ Email Address []:
 # openssl ca -config intermediate/openssl.cnf -extensions usr_cert -days 375 -notext -md sha256 -in intermediate/csr/admin.csr.pem -out intermediate/certs/admin.cert.pem
 ```
 
-#### Create a certificate chain
+#### Create the certificate chain
 
 ```bash
 cat intermediate/certs/admin.cert.pem > intermediate/certs/admin.chain.cert.pem 
@@ -203,6 +206,8 @@ cat certs/ca.cert.pem >> intermediate/certs/admin.chain.cert.pem
 ### Import the CA certificate 
 
 For this example, gnmi-root is used as trustpoint name but it can have any name. Use the content of the root certificate only (certs/ca.cert.pem) - no chains or intermediate certs are required
+
+Execute the following commands on the device:
 
 ```
 nx9300v_01# configure
@@ -227,6 +232,7 @@ nx9300v_01(config)# grpc client root certificate gnmi-root
 #### Create gnmic config file
 
 > You might need to change the tls files path to match your environment
+
 > Password is not required anymore
 
 ```
