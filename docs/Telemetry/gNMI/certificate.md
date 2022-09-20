@@ -7,14 +7,11 @@ NX-OS supports two types of certificates for gRPC:
 
 > To create any type of certificate, a certificate authority (CA) is required. If you don't have one (or you are looking for something free), follow the steps in this excelent guide by Jamie Nguyen: https://jamielinux.com/docs/openssl-certificate-authority/introduction.html
 
-
 > An acurate time is important when dealing with TLS certificates. It is recommended to setup NTP in the client and servers/devices. If you see errors related to certificate not valid yet or expired it is probably that the device or the client don't have a correct time set.
 
 > For simplicity, this tutorial uses root but other users with less priviledges can be used. 
 
-
 > Make sure keys and certificates are protected
-
 
 > Tests for this tutorial are done using [gnmic](https://github.com/karimra/gnmic) and [pygnmi](https://pypi.org/project/pygnmi/)
 
@@ -23,127 +20,129 @@ NX-OS supports two types of certificates for gRPC:
 A server certificate will allow you to connect to a NX-OS device securely, without need of skipping TLS verification for TLS connections. 
 
 > It is assumed that you have a valid root and intermediate CA certificates. Instructions can be found at the top of this article on how to set that up 
+> 
 1. Add the subjectAltName setting to the intermediate/openssl.cnf file (server_cert section):
 
-```
-[ server_cert ]
-# Extensions for server certificates (`man x509v3_config`).
-basicConstraints = CA:FALSE
-subjectAltName=${ENV::SAN}
-nsCertType = server
-nsComment = "OpenSSL Generated Server Certificate"
-subjectKeyIdentifier = hash
-authorityKeyIdentifier = keyid,issuer:always
-keyUsage = critical, digitalSignature, keyEncipherment
-extendedKeyUsage = serverAuth
-```
+    ```
+    [ server_cert ]
+    # Extensions for server certificates (`man x509v3_config`).
+    basicConstraints = CA:FALSE
+    subjectAltName=${ENV::SAN}
+    nsCertType = server
+    nsComment = "OpenSSL Generated Server Certificate"
+    subjectKeyIdentifier = hash
+    authorityKeyIdentifier = keyid,issuer:always
+    keyUsage = critical, digitalSignature, keyEncipherment
+    extendedKeyUsage = serverAuth
+    ```
 
-The value _${ENV::SAN}_ instructs openssl to look for the value of the subjectAltName in an environmental variable called _SAN_
+    The value _${ENV::SAN}_ instructs openssl to look for the value of the subjectAltName in an environmental variable called _SAN_
+
 2. Set the SAN variable. If you don't have a DNS available, you can manually add the host entry in the /etc/hosts file if you would like to use names instead of IPs. Either one works
 
-In this example, the device name is nx93000v-01.cisco.com and its management IP is 192.168.1.1
+    In this example, the device name is nx93000v-01.cisco.com and its management IP is 192.168.1.1
 
-```bash
-export SAN=DNS:nx9300v-01,DNS:nx9300v-01.cisco.com,IP:192.168.1.1
-```
+    ```bash
+    export SAN=DNS:nx9300v-01,DNS:nx9300v-01.cisco.com,IP:192.168.1.1
+    ```
 3. Create keys and certificates. Altough the file name is trivial, it is a best practice to use the hostname of the device or other identifier that sumarizes the purpuse of the certificate. 
 
-> You can use the same certificate for multiple devices
-> Make sure to use server_cert extensions
+    > You can use the same certificate for multiple devices
+    > Make sure to use server_cert extensions
 
-```bash
-openssl genrsa -out intermediate/private/nx9300v-01.cisco.com.key.pem
+    ```bash
+    openssl genrsa -out intermediate/private/nx9300v-01.cisco.com.key.pem
 
-openssl req -config intermediate/openssl.cnf -key intermediate/private/nx9300v-01.cisco.com.key.pem -new -sha256 -out intermediate/csr/nx9300v-01.cisco.com.csr.pem
-(...)
------
-Country Name (2 letter code) [GB]:US
-State or Province Name [England]:CO
-Locality Name []:
-Organization Name [Alice Ltd]:Nexus
-Organizational Unit Name []:Datacenter 
-Common Name []:nx9300v-01.cisco.com
-Email Address []:
+    openssl req -config intermediate/openssl.cnf -key intermediate/private/nx9300v-01.cisco.com.key.pem -new -sha256 -out intermediate/csr/nx9300v-01.cisco.com.csr.pem
+    (...)
+    -----
+    Country Name (2 letter code) [GB]:US
+    State or Province Name [England]:CO
+    Locality Name []:
+    Organization Name [Alice Ltd]:Nexus
+    Organizational Unit Name []:Datacenter 
+    Common Name []:nx9300v-01.cisco.com
+    Email Address []:
 
-openssl ca -config intermediate/openssl.cnf -extensions server_cert -days 375 -notext -md sha256 -in intermediate/csr/nx9300v-01.cisco.com.csr.pem -out intermediate/certs/nx9300v-01.cisco.com.cert.pem
-```
+    openssl ca -config intermediate/openssl.cnf -extensions server_cert -days 375 -notext -md sha256 -in intermediate/csr/nx9300v-01.cisco.com.csr.pem -out intermediate/certs/nx9300v-01.cisco.com.cert.pem
+    ```
 4. Verify the certificate has been generated correctly. Check that alternative name section is present and has the values set in the step #2
 
-```bash
-openssl x509 -noout -text -in intermediate/certs/nx9300v-01.cisco.com.cert.pem
-```
+    ```bash
+    openssl x509 -noout -text -in intermediate/certs/nx9300v-01.cisco.com.cert.pem
+    ```
 5. To import the certificate and key into the device, we need to chain the ca, intermediate and device certificate into a single file
 
-```bash
-cat intermediate/certs/nx9300v-01.cisco.com.cert.pem > intermediate/certs/nx9300v-01.cisco.com.chain.cert.pem
-cat intermediate/certs/intermediate.cert.pem >> intermediate/certs/nx9300v-01.cisco.com.chain.cert.pem
-cat certs/ca.cert.pem >> intermediate/certs/nx9300v-01.cisco.com.chain.cert.pem
-```
+    ```bash
+    cat intermediate/certs/nx9300v-01.cisco.com.cert.pem > intermediate/certs/nx9300v-01.cisco.com.chain.cert.pem
+    cat intermediate/certs/intermediate.cert.pem >> intermediate/certs/nx9300v-01.cisco.com.chain.cert.pem
+    cat certs/ca.cert.pem >> intermediate/certs/nx9300v-01.cisco.com.chain.cert.pem
+    ```
 6. Using pkcs12, export and copy the file to the device. Make sure to remember the password
 
-```bash
-openssl pkcs12 -export -out intermediate/certs/nx9300v-01.cisco.com.pfk -inkey intermediate/private/nx9300v-01.cisco.com.key.pem -in intermediate/certs/nx9300v-01.cisco.com.chain.cert.pem
-scp intermediate/certs/nx9300v-01.cisco.com.pfk  admin@192.168.1.1:
-```
+    ```bash
+    openssl pkcs12 -export -out intermediate/certs/nx9300v-01.cisco.com.pfk -inkey intermediate/private/nx9300v-01.cisco.com.key.pem -in intermediate/certs/nx9300v-01.cisco.com.chain.cert.pem
+    scp intermediate/certs/nx9300v-01.cisco.com.pfk  admin@192.168.1.1:
+    ```
 7. Import the pkcs12 file (For this example, "supersecret" was used as password in step #6) and configure grpc to use that truspoint
 
-```cli
-configure
-crypto ca trustpoint server
-crypto ca import server pkcs12 bootflash:nx9300v-01.cisco.com.pfk supersecret
-grpc certificate server
-```
+    ```cli
+    configure
+    crypto ca trustpoint server
+    crypto ca import server pkcs12 bootflash:nx9300v-01.cisco.com.pfk supersecret
+    grpc certificate server
+    ```
 8. Test with gnmic - make sure to use the certificate chains files, not the standalone certificate file. The --skip-verify option should not be needed
 
-```
-# gnmic -a nx9300v-01.cisco.com:50051 -u admin -p YOURPASSWORD get --path /System/name --tls-cert intermediate/certs/nx9300v-01.cisco.com.chain.cert.pem --tls-key intermediate/private/nx9300v-01.cisco.com.key.pem -e json --tls-ca intermediate/certs/ca-chain.cert.pem 
-[
-  {
-    "source": "nx9300v-01.cisco.com:50051",
-    "timestamp": 1657660857691587822,
-    "time": "2022-07-12T21:20:57.691587822Z",
-    "updates": [
+    ```
+    # gnmic -a nx9300v-01.cisco.com:50051 -u admin -p YOURPASSWORD get --path /System/name --tls-cert intermediate/certs/nx9300v-01.cisco.com.chain.cert.pem --tls-key intermediate/private/nx9300v-01.cisco.com.key.pem -e json --tls-ca intermediate/certs/ca-chain.cert.pem 
+    [
       {
-        "Path": "System/name",
-        "values": {
-          "System/name": "nx9300v-01"
-        }
+        "source": "nx9300v-01.cisco.com:50051",
+        "timestamp": 1657660857691587822,
+        "time": "2022-07-12T21:20:57.691587822Z",
+        "updates": [
+          {
+            "Path": "System/name",
+            "values": {
+              "System/name": "nx9300v-01"
+            }
+          }
+        ]
       }
     ]
-  }
-]
-# 
-```
+    # 
+    ```
 9. Other libraries like pygnmi should work too. For example:
 
-> For simplicity, this example includes credentials in clear text, which is not a best practice.
+    > For simplicity, this example includes credentials in clear text, which is not a best practice.
 
-```python
-# Modules
-from pygnmi.client import gNMIclient
-import json
-# Variables
-host = ('nx9300v-01.cisco.com', '50051')
-paths = ['/System/name']
+    ```python
+    # Modules
+    from pygnmi.client import gNMIclient
+    import json
+    # Variables
+    host = ('nx9300v-01.cisco.com', '50051')
+    paths = ['/System/name']
 
-# Body
-if __name__ == '__main__':
-    with gNMIclient(target=host, username='admin', password="YOURPASSWORD", path_cert="./ca/intermediate/certs/nx9300v-01.cisco.com.chain.cert.pem",
-    path_key="./ca/intermediate/private/nx9300v-01.cisco.com.key.pem", path_root="./ca/intermediate/certs/ca-chain.cert.pem") as gc:
+    # Body
+    if __name__ == '__main__':
+        with gNMIclient(target=host, username='admin', password="YOURPASSWORD", path_cert="./ca/intermediate/certs/nx9300v-01.cisco.com.chain.cert.pem",
+        path_key="./ca/intermediate/private/nx9300v-01.cisco.com.key.pem", path_root="./ca/intermediate/certs/ca-chain.cert.pem") as gc:
 
-          result = gc.get(path=paths, encoding='json')
-          print(result)
-          print()
-```
+              result = gc.get(path=paths, encoding='json')
+              print(result)
+              print()
+    ```
 
 
-```
-# 
-# python get-nx.py 
-{'notification': [{'timestamp': 1657660901108756130, 'update': [{'path': 'System/name', 'val': 'nx9300v-01'}]}]}
+    ```
+    # 
+    # python get-nx.py 
+    {'notification': [{'timestamp': 1657660901108756130, 'update': [{'path': 'System/name', 'val': 'nx9300v-01'}]}]}
 
-# 
-```
+    # 
+    ```
 
 ## Client certificate
 
