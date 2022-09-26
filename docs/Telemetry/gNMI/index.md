@@ -32,9 +32,13 @@ NX-OS supports the following gNMI RPCs:
 * Capabilities
 
 ## gNMI Device Configuration
-FILL IN LATER
-FILL IN LATER
-FILL IN LATER
+As mentioned above, gNMI relies on gRPC. A combination of gRPC and gNMI settings are required to configure this functionality on NX-OS.
+
+```
+switch# feature grpc
+switch# grpc port 55555
+> range
+switch# grpc certificate cert
 
 ## gNMI Subscription
 gNMI subscription can be used with both dial-in or dial-out methods.
