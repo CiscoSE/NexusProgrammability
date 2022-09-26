@@ -36,6 +36,7 @@ As mentioned above, gNMI relies on gRPC. A combination of gRPC and gNMI settings
 
 ```
 switch# feature grpc
+
 switch# grpc port 50051
 Ports can be from 1024 to 65535. Default is 50051.
 
