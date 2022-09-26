@@ -38,10 +38,13 @@ As mentioned above, gNMI relies on gRPC. A combination of gRPC and gNMI settings
 switch# feature grpc
 switch# grpc port 55555
 > range
+
 switch# grpc certificate cert
 switch# grpc gnmi max-concurrent-call number
 > range
+
 switch# grpc use-vrf default
+```
 
 ## gNMI Subscription
 gNMI subscription can be used with both dial-in or dial-out methods.
