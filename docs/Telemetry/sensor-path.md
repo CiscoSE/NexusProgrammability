@@ -1,4 +1,4 @@
-# Common Sensor Path
+# Common Sensor Paths
 
 > Placeholder: common sensor paths of OC model and Native Model
 
