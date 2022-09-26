@@ -36,14 +36,17 @@ As mentioned above, gNMI relies on gRPC. A combination of gRPC and gNMI settings
 
 ```
 switch# feature grpc
-switch# grpc port 55555
-> range
+switch# grpc port 50051
+Ports can be from 1024 to 65535. Default is 50051.
 
-switch# grpc certificate cert
-switch# grpc gnmi max-concurrent-call number
-> range
+switch# grpc certificate CertName
+CertName is the filename of your certificate file.
+
+switch# grpc gnmi max-concurrent-call 8
+This is the limit of simulteneous dial-in calls. The limit can be from 1 to 16. Default is 8.
 
 switch# grpc use-vrf default
+Allows you to select which vrf to use for gNMI traffic.
 ```
 
 ## gNMI Subscription
