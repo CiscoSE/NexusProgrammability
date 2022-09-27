@@ -16,12 +16,12 @@ switch# grpc port 50051
     Ports can be from 1024 to 65535. Default is 50051.
 
 #### Configure Certificate
-Specify the certificate used for gRPC.
+Specify the certificate trustpoint ID used for gRPC.
 ```
-switch# grpc certificate CERTNAME
+switch# grpc certificate TRUSTPOINT
 ```
 !!! Note
-    CERTNAME is the filename of your certificate file.
+    TRUSTPOINT is the name of your trustpoint ID. For more information, see [Installing Identity Certificates](https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus9000/103x/configuration/security/cisco-nexus-9000-nx-os-security-configuration-guide-103x/m-configuring-pki.html#task_2088148)
 
 #### Set Dial-In Call Limits
 Set the limit of simultaneous dial-in calls to the gNMI server on the device.
