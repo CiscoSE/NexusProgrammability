@@ -39,3 +39,11 @@ switch# grpc use-vrf default
 ```
 !!! Note
     By default, the management VRF accepts incoming requests when the gRPC feature is enabled.
+
+#### Enable OpenConfig (Optional)
+At this point, your device is ready to use the Cisco native YANG model with gNMI.
+If you'd like to use the OpenConfig model instead, it will need to be enabled with the following command:
+```
+switch# feature openconfig
+```
+After running this command, your device now supports both the Cisco native and OpenConfig YANG models.
