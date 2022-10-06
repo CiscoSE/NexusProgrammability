@@ -33,6 +33,7 @@
 | All LLDP information | /lldp/interfaces/interface | |
 | LLDP neighbor ID type | /lldp/interfaces/interface/neighbors/neighbor/state/chassis-id-type | |
 | LLDP chassis ID | /lldp/interfaces/interface/neighbors/neighbor/state/chassis-id | |
+| Show port ID type | /lldp/interfaces/interface/neighbors/neighbor/state/port-id-type | |
 
 ## LACP
 | Metric      | Openconfig Model | Native Model |
