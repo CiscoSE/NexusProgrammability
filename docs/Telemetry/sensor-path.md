@@ -30,7 +30,8 @@
 ## LLDP
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
-| All LLDP information | lldp/interfaces/interface | |
+| All LLDP information | /lldp/interfaces/interface | |
+| LLDP neighbor ID type | /lldp/interfaces/interface/neighbors/neighbor/state/chassis-id-type | |
 
 ## LACP
 | Metric      | Openconfig Model | Native Model |
