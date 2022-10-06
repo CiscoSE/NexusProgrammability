@@ -6,6 +6,7 @@ It has many features and supports multiple deployment methods. More information 
 
 ## Installation
 gNMIc can be deployed on the following platforms:
+
 * Linux
 * Mac
 * Windows (Using Windows Subsystem for Linux)
