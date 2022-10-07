@@ -26,6 +26,10 @@
 | Egress broadcast packets | /interfaces/interface/state/counters/out-broadcast-pkts | |
 | Egress multicast packets | /interfaces/interface/state/counters/out-multicast-pkts | |
 | Egress bytes | /interfaces/interface/state/counters/out-octets | |
+| Egress unicast packets | /interfaces/interface/state/counters/out-unicast-pkts | |
+| Ingress errors | /interfaces/interface/state/counters/in-errors | |
+| Interface status | /interfaces/interface/state/oper-status | |
+| Egress errors | /interfaces/interface/state/counters/out-errors | |
 
 ## BGP
 | Metric      | Openconfig Model | Native Model |
