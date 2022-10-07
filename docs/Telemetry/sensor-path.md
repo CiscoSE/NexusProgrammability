@@ -4,6 +4,7 @@
 
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
+| Memory utilized | /components/component/state/memory/utilized | |
 
 ## Platform
 
