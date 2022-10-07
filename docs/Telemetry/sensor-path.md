@@ -16,8 +16,16 @@
 | Interface counters | 	/interfaces/interface/state/counters | 	/System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items |
 | Admin status | /interfaces/interface/state/admin-status | |
 | Interface descriptions | /interfaces/interface/state/description | |
-| Interface names| /interfaces/interface/state/name | |
-| Packets discarded| /interfaces/interface/state/counters/in-discards | |
+| Interface names | /interfaces/interface/state/name | |
+| Ingress packets discarded | /interfaces/interface/state/counters/in-discards | |
+| Egress packets discarded | /interfaces/interface/state/counters/out-discards | |
+| Ingress broadcast packets | /interfaces/interface/state/counters/in-broadcast-pkts | |
+| Ingress multicast packets | /interfaces/interface/state/counters/in-multicast-pkts | |
+| Ingress bytes | /interfaces/interface/state/counters/in-octets | |
+| Ingress unicast packets | /interfaces/interface/state/counters/in-unicast-pkts | |
+| Egress broadcast packets | /interfaces/interface/state/counters/out-broadcast-pkts | |
+| Egress multicast packets | /interfaces/interface/state/counters/out-multicast-pkts | |
+| Egress bytes | /interfaces/interface/state/counters/out-octets | |
 
 ## BGP
 | Metric      | Openconfig Model | Native Model |
