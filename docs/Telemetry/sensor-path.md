@@ -5,6 +5,8 @@
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 | Memory utilized | /components/component/state/memory/utilized | |
+| Memory reserved | /system/memory/state/reserved| |
+| Component status | /components/component/state/oper-status | |
 
 ## Platform
 
@@ -59,3 +61,7 @@
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 
+## VLAN
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+| VLAN ID | /network-instances/network-instance/vlans/vlan/state/vlan-id | |
