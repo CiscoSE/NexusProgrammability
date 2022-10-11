@@ -8,6 +8,8 @@
 | Memory reserved | /system/memory/state/reserved| |
 | Component status | /components/component/state/oper-status | |
 | CPU average utilization | /system/cpus/cpu/state/total/avg | |
+| CPU current utilization | /components/component/cpu/utilization/state/instant | |
+| CPU average state utilization | /components/component/cpu/utilization/state/avg | |
 
 ## Platform
 
