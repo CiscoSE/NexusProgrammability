@@ -6,8 +6,10 @@
 | :--- | :--- | :--- |
 | Memory utilized | /components/component/state/memory/utilized | |
 | Memory reserved | /system/memory/state/reserved| |
+| Memory available | /components/component/state/memory/available | |
+| Memory total | /system/memory/state/physical | |
 | Component status | /components/component/state/oper-status | |
-| CPU average utilization | /system/cpus/cpu/state/total/avg | |
+| CPU total average utilization | /system/cpus/cpu/state/total/avg | |
 | CPU current utilization | /components/component/cpu/utilization/state/instant | |
 | CPU state average utilization | /components/component/cpu/utilization/state/avg | |
 | CPU state minimum utilization | /components/component/cpu/utilization/state/min | |
