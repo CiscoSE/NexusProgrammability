@@ -9,7 +9,11 @@
 | Component status | /components/component/state/oper-status | |
 | CPU average utilization | /system/cpus/cpu/state/total/avg | |
 | CPU current utilization | /components/component/cpu/utilization/state/instant | |
-| CPU average state utilization | /components/component/cpu/utilization/state/avg | |
+| CPU state average utilization | /components/component/cpu/utilization/state/avg | |
+| CPU state minimum utilization | /components/component/cpu/utilization/state/min | |
+| CPU state maximum utilization | /components/component/cpu/utilization/state/max | |
+| Fan speed | /components/component/fan/state/speed | |
+| Fan state | /openconfig-platform:components/component/fan/state/ | |
 
 ## Platform
 
