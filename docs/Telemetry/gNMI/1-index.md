@@ -46,6 +46,6 @@ Starting in NX-OS 9.3.1, Nexus switches support the following subscription featu
 * Stream - Sample
     * Collect current values every stream interval. Supported time interval ranges are from 1 to 604800 seconds. The default sample time is 10 seconds.
 * Stream - On_Change
-    * Collect current values immediately. After this intiial collection, only collect values when there is a change.
+    * Collect current values immediately. After this initial collection, only collect values when there is a change.
 * Stream - Target_Defined
     * This allows the target to define the best type of subscription to use.
