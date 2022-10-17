@@ -3,13 +3,13 @@
 ## About gRPC
 gNMI is built on top of Google Remote Procedure Call (gRPC). gRPC is an open source high performance RPC framework released in 2016. It uses HTTP/2 for transport, protocol buffers for the interface description language, and includes the following features:
 
-* authentication
-* bi-directional streaming
-* bi-direction flow control
-* blocking bindings
-* non-blocking bindings
-* cancellation
-* timeouts
+* Authentication
+* Bi-directional streaming
+* Bi-direction flow control
+* Blocking bindings
+* Non-blocking bindings
+* Cancellation
+* Timeouts
 
 gRPC can generate cross-platform client and server bindings for many languages. It also supports TLS and token-based authentication. gRPC uses protocol buffers to encode data.
 
