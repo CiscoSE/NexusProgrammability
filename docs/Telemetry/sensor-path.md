@@ -4,10 +4,10 @@
 
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
-| Memory utilized | /components/component/state/memory/utilized | |
+| Memory utilized | /components/component/state/memory/utilized | 	/System/pie-items/modules-items/module-items/Module-list/memory-items/memory_usage-items/memUsed |
 | Memory reserved | /system/memory/state/reserved| |
-| Memory available | /components/component/state/memory/available | |
-| Memory total | /system/memory/state/physical | |
+| Memory available | /components/component/state/memory/available | /System/pie-items/modules-items/module-items/Module-list/memory-items/memory_usage-items/memFree |
+| Memory total | /system/memory/state/physical | /System/pie-items/modules-items/module-items/Module-list/memory-items/memory_usage-items/memTotal |
 | Component status | /components/component/state/oper-status | |
 | CPU total average utilization | /system/cpus/cpu/state/total/avg | |
 | CPU current utilization | /components/component/cpu/utilization/state/instant | |
