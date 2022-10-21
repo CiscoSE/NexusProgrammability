@@ -4,14 +4,17 @@
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 | Hostname | | /System/name |
+| System Serial number | | /System/serial |
 | System copyright | | /System/showversion-items/copyRight |
 | BIOS version | | 	/System/showversion-items/biosVersion |
 | BIOS date | | /System/showversion-items/biosCompileTime |
 | NX-OS version | | /System/showversion-items/nxosVersion |
-| Serial number | | /System/serial |
+| NX-OS date | | /System/showversion-items/nxosCompileTime |
+| Current NX-OS image | | /System/showversion-items/nxosImageFile |
 | Kernel uptime | | /System/showversion-items/kernelUptime |
 | Last reset reason | | /System/showversion-items/lastResetReason |
 | Last reset OS version | | /System/showversion-items/lastResetSysVersion |
+| Last reset time | | /System/showversion-items/lastResetTime |
 
 ## System Hardware
 | Metric      | Openconfig Model | Native Model |
