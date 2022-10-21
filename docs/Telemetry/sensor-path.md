@@ -19,9 +19,9 @@
 ## System Hardware - Power Supply
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
-| ID number | | /System/ch-items/psuslot-items/PsuSlot-list/id |
-| Alternate ID number | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/id |
-| Physical ID number | | /System/ch-items/psuslot-items/PsuSlot-list/physId |
+| PSU slot ID number | | /System/ch-items/psuslot-items/PsuSlot-list/id |
+| PSU slot physical ID number | | /System/ch-items/psuslot-items/PsuSlot-list/physId |
+| PSU ID number | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/id |
 | Serial | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/ser |
 | PSU slot description | | /System/ch-items/psuslot-items/PsuSlot-list/descr |
 | PSU description | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/descr |
