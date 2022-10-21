@@ -10,7 +10,7 @@
 | BIOS date | | /System/showversion-items/biosCompileTime |
 | NX-OS version | | /System/showversion-items/nxosVersion |
 | NX-OS date | | /System/showversion-items/nxosCompileTime |
-| Current NX-OS image | | /System/showversion-items/nxosImageFile |
+| NX-OS image filename| | /System/showversion-items/nxosImageFile |
 | Kernel uptime | | /System/showversion-items/kernelUptime |
 | Last reset reason | | /System/showversion-items/lastResetReason |
 | Last reset OS version | | /System/showversion-items/lastResetSysVersion |
