@@ -20,16 +20,35 @@
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 | ID number | | /System/ch-items/psuslot-items/PsuSlot-list/id |
+| Alternate ID number | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/id |
 | Physical ID number | | /System/ch-items/psuslot-items/PsuSlot-list/physId |
-| Description | | /System/ch-items/psuslot-items/PsuSlot-list/descr |
+| Serial | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/ser |
+| PSU slot description | | /System/ch-items/psuslot-items/PsuSlot-list/descr |
+| PSU description | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/descr |
 | Slot type | | /System/ch-items/psuslot-items/PsuSlot-list/type |
 | Presence | | /System/ch-items/psuslot-items/PsuSlot-list/operSt |
 | Location | | /System/ch-items/psuslot-items/PsuSlot-list/loc |
 | State | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/operSt |
-| Current draw | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/drawnCurr |
-| Source voltage | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/vSrc |
-| PSU voltage | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/volt |
+| Vendor | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/vendor |
+| Model | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/model |
+| Revision | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/rev |
+| Software alarm state | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/softwareAlarm |
+| Hardware alarm state | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/hardwareAlarm |
+| Power cord presence | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/typeCordConnected |
+| Amps input (actual) | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/inputCurr |
+| Amps input | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/iIn |
+| Amps output (actual) | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/drawnCurr |
+| Amps output | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/iOut |
+| Volts source | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/vSrc |
+| Volts input | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/vIn |
+| Volts output | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/vOut |
+| Volts PSU | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/volt |
+| VDR ID | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/vdrId |
+| Watts input | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/pIn |
+| Watts output | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/pOut |
 | Fan state | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/fanOpSt |
+| Fan direction | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/fanDirection |
+
 
 ## System Hardware
 | Metric      | Openconfig Model | Native Model |
