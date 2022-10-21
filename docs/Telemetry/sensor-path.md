@@ -16,6 +16,21 @@
 | Last reset OS version | | /System/showversion-items/lastResetSysVersion |
 | Last reset time | | /System/showversion-items/lastResetTime |
 
+## System Hardware - Power Supply
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+| ID number | | /System/ch-items/psuslot-items/PsuSlot-list/id |
+| Physical ID number | | /System/ch-items/psuslot-items/PsuSlot-list/physId |
+| Description | | /System/ch-items/psuslot-items/PsuSlot-list/descr |
+| Slot type | | /System/ch-items/psuslot-items/PsuSlot-list/type |
+| Presence | | /System/ch-items/psuslot-items/PsuSlot-list/operSt |
+| Location | | /System/ch-items/psuslot-items/PsuSlot-list/loc |
+| State | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/operSt |
+| Current draw | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/drawnCurr |
+| Source voltage | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/vSrc |
+| PSU voltage | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/volt |
+| Fan state | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/fanOpSt |
+
 ## System Hardware
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
