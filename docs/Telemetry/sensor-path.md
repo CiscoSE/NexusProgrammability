@@ -1,7 +1,16 @@
 # Common Sensor Paths
 
-## System
+## System General
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+| Hostname | | /System/name |
+| System copyright | | /System/showversion-items/copyRight |
+| BIOS version | | 	/System/showversion-items/biosVersion |
+| NX-OS version | | /System/showversion-items/nxosVersion |
+| Serial number | | /System/serial |
+| Kernel uptime | | 
 
+## System Hardware
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 | Memory utilized | /components/component/state/memory/utilized | 	/System/pie-items/modules-items/module-items/Module-list/memory-items/memory_usage-items/memUsed |
@@ -18,7 +27,6 @@
 | Fan state | /openconfig-platform:components/component/fan/state/ | |
 
 ## Platform
-
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 
