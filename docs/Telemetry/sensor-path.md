@@ -6,9 +6,12 @@
 | Hostname | | /System/name |
 | System copyright | | /System/showversion-items/copyRight |
 | BIOS version | | 	/System/showversion-items/biosVersion |
+| BIOS date | | /System/showversion-items/biosCompileTime |
 | NX-OS version | | /System/showversion-items/nxosVersion |
 | Serial number | | /System/serial |
-| Kernel uptime | | 
+| Kernel uptime | | /System/showversion-items/kernelUptime |
+| Last reset reason | | /System/showversion-items/lastResetReason |
+| Last reset OS version | | /System/showversion-items/lastResetSysVersion |
 
 ## System Hardware
 | Metric      | Openconfig Model | Native Model |
