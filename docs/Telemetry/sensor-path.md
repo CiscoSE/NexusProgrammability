@@ -49,6 +49,27 @@
 | Fan state | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/fanOpSt |
 | Fan direction | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/fanDirection |
 
+## System Hardware - Storage
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+| Drive ID | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/id |
+| Description | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/descr |
+| Drive type | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/type |
+| Vendor | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/vendor |
+| Model | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/model |
+| Revision | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/rev |
+| Serial | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/ser |
+| Access type | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/acc |
+| Lifetime percent used | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/lifetime |
+| Manufacturing time | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/mfgTm |
+| Drive status | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/operSt |
+| Minor alarm count | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/minorAlarm |
+| Major alarm count | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/majorAlarm |
+| Terabytes written | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/tbw |
+| Bad blocks | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/gbb |
+| Drive warning count | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/warning |
+| Read error rate | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/readErrorRate |
+| P/E Cycles | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/peCycle |
 
 ## System Hardware
 | Metric      | Openconfig Model | Native Model |
