@@ -74,7 +74,12 @@
 ### Platform - Fans
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
-| Fan description | | /System/ch-items/ftslot-items/FtSlot-list/ft-items/fan-items/Fan-list/descr |
+| Fan ID | | /System/pie-items/env-items/fan-items/fan_env_info-items/fan_env_record-items/FanEnvRecord-list/fanId |
+| Description | | /System/ch-items/ftslot-items/FtSlot-list/ft-items/fan-items/Fan-list/descr |
+| Presence | | /System/pie-items/env-items/fan-items/fan_env_info-items/fan_env_record-items/FanEnvRecord-list/fanPresent |
+| Direction | | /System/ch-items/ftslot-items/FtSlot-list/ft-items/fan-items/Fan-list/dir |
+| Status | | /System/ch-items/ftslot-items/FtSlot-list/ft-items/fan-items/Fan-list/operSt |
+| Vendor | | /System/ch-items/ftslot-items/FtSlot-list/ft-items/fan-items/Fan-list/vendor |
 
 ## System Hardware
 | Metric      | Openconfig Model | Native Model |
