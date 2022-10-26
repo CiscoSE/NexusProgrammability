@@ -49,7 +49,7 @@
 | Fan state | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/fanOpSt |
 | Fan direction | | /System/ch-items/psuslot-items/PsuSlot-list/psu-items/fanDirection |
 
-## System Hardware - Storage
+### Platform - Storage
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 | Drive ID | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/id |
