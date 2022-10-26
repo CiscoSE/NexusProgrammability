@@ -71,6 +71,11 @@
 | Read error rate | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/readErrorRate |
 | P/E Cycles | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/peCycle |
 
+### Platform - Fans
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+| Fan description | | /System/ch-items/ftslot-items/FtSlot-list/ft-items/fan-items/Fan-list/descr |
+
 ## System Hardware
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
@@ -86,10 +91,6 @@
 | CPU state maximum utilization | /components/component/cpu/utilization/state/max | |
 | Fan speed | /components/component/fan/state/speed | |
 | Fan state | /openconfig-platform:components/component/fan/state/ | |
-
-## Platform
-| Metric      | Openconfig Model | Native Model |
-| :--- | :--- | :--- |
 
 ## Interface
 | Metric      | Openconfig Model | Native Model |
