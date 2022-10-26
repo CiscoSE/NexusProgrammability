@@ -1,6 +1,6 @@
 # Common Sensor Paths
 
-## System General
+## Platform
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 | Hostname | | /System/name |
@@ -16,7 +16,7 @@
 | Last reset OS version | | /System/showversion-items/lastResetSysVersion |
 | Last reset time | | /System/showversion-items/lastResetTime |
 
-## System Hardware - Power Supply
+### Platform - Power Supply
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 | PSU slot ID number | | /System/ch-items/psuslot-items/PsuSlot-list/id |
