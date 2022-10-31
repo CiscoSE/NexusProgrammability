@@ -15,6 +15,7 @@
 | Last reset reason | | /System/showversion-items/lastResetReason |
 | Last reset OS version | | /System/showversion-items/lastResetSysVersion |
 | Last reset time | | /System/showversion-items/lastResetTime |
+| System alarms | | /System/alarms-items/alarm-items/Alarm-list |
 
 ### Platform - Power Supply
 | Metric      | Openconfig Model | Native Model |
@@ -122,6 +123,14 @@
 | Ingress errors | /interfaces/interface/state/counters/in-errors | |
 | Interface status | /interfaces/interface/state/oper-status | |
 | Egress errors | /interfaces/interface/state/counters/out-errors | |
+
+## ARP
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+| Admin state | | /System/arp-items/inst-items/adminSt |
+| Operational state | | /System/arp-items/operSt |
+| Allow ARP outside subnet | | /System/arp-items/inst-items/allowStaticArpOutsideSubnet |
+| Cache limit | | /System/arp-items/inst-items/cacheLimit |
 
 ## BGP
 | Metric      | Openconfig Model | Native Model |
