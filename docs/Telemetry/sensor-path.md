@@ -17,6 +17,19 @@
 | Last reset time | | /System/showversion-items/lastResetTime |
 | System alarms | | /System/alarms-items/alarm-items/Alarm-list |
 
+### Platform - Boot
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+| Auto copy status | | /System/boot-items/autoCopy |
+| Exclude configuration status | | /System/boot-items/excludeCfg |
+| Boot success status | | /System/boot-items/image-items/image_err |
+| Image verification | | /System/boot-items/image-items/imageverification |
+| Supervisor 1 image | | /System/boot-items/image-items/sup1 |
+| Supervisor 2 image | | /System/boot-items/image-items/sup2 |
+| Supervisor 1 reload image | | /System/boot-items/image-items/sup1NextReload |
+| Supervisor 2 reload image | | /System/boot-items/image-items/sup2NextReload |
+| POAP state | | /System/boot-items/poap |
+
 ### Platform - Power Supply
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
