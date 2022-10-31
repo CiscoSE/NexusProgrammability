@@ -75,6 +75,7 @@
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 | Fan module ID | | /System/pie-items/env-items/fan-items/fan_env_info-items/fan_env_record-items/FanEnvRecord-list/fanId |
+| Fan ID within module | | /System/pie-items/env-items/fan-items/fan_env_info-items/fan_env_record-items/FanEnvRecord-list/fan_params-items/FanParams-list/trayInst |
 | Description | | /System/ch-items/ftslot-items/FtSlot-list/ft-items/fan-items/Fan-list/descr |
 | Presence | | /System/pie-items/env-items/fan-items/fan_env_info-items/fan_env_record-items/FanEnvRecord-list/fanPresent |
 | Direction | | /System/ch-items/ftslot-items/FtSlot-list/ft-items/fan-items/Fan-list/dir |
