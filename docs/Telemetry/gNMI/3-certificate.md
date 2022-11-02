@@ -56,11 +56,11 @@ export SAN=DNS:nx9300v-01,DNS:nx9300v-01.cisco.com,IP:192.168.1.1
 ```
 #### Create key and certificate 
 
-Altough the file name is trivial, it is a best practice to use the hostname of the device or other identifier that summarizes the purpose of the certificate.
+Although the file name is trivial, it is a best practice to use the hostname of the device or other identifier that summarizes the purpose of the certificate.
 
 !!! note
-    You can use the same certificate for multiple devices
-    Make sure to use server_cert extensions
+    The following commands are intended to be run from `/root/ca`
+    You can use the same certificate for multiple devices. Make sure to use server_cert extensions.
 
 ```bash
 openssl genrsa -out intermediate/private/nx9300v-01.cisco.com.key.pem
