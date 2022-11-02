@@ -47,16 +47,16 @@ The value `${ENV::SAN}` instructs openssl to look for the value of the subjectAl
 
 #### Set the SAN variable. 
 
-If you don't have a DNS available, you can manually add the host entry in the /etc/hosts file if you would like to use names instead of IPs. Either one works
+If you don't have a DNS available, you can manually add the host entry in the /etc/hosts file if you would like to use names instead of IPs. Either one works.
 
-In this example, the device name is nx93000v-01.cisco.com and its management IP is 192.168.1.1
+In this example, the device name is nx93000v-01.cisco.com and its management IP is 192.168.1.1.
 
 ```bash
 export SAN=DNS:nx9300v-01,DNS:nx9300v-01.cisco.com,IP:192.168.1.1
 ```
 #### Create key and certificate 
 
-Altough the file name is trivial, it is a best practice to use the hostname of the device or other identifier that sumarizes the purpuse of the certificate. 
+Altough the file name is trivial, it is a best practice to use the hostname of the device or other identifier that summarizes the purpose of the certificate.
 
 !!! note
     You can use the same certificate for multiple devices
