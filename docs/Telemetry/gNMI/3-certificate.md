@@ -184,11 +184,11 @@ if __name__ == '__main__':
 ## Client certificate
 
 If you prefer to use a certificate and key instead of a password, you can create a client certificate that can be used to authenticate against the NX-OS device.
-It is assumed that you have a valid root and intermediate CA certificates installed in your workstation. Instructions can be found at the top of this article on how to set that up 
+It is assumed that you have a valid root and intermediate CA certificates installed in your workstation. Instructions can be found at the top of this article on how to set that up.
 
 #### Create key and certificate
 
-Altough the file name is trivial, it is a best practice to use the username or other identifier that sumarizes the purpuse of the certificate, csr and keys. 
+Although the file name is trivial, it is a best practice to use the username or other identifier that sumarizes the purpose of the certificate, csr and keys.
 
 !!! note 
      - Make sure to use usr_cert extensions
