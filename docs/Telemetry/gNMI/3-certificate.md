@@ -92,6 +92,12 @@ Check that the alternative name section is present and has the values set in the
 ```bash
 openssl x509 -noout -text -in intermediate/certs/nx9300v-01.cisco.com.cert.pem
 ```
+??? example "Output"
+    ```
+     X509v3 Subject Alternative Name: 
+    DNS:nx9300v-01, IP Address:192.168.1.1
+    ```
+
 #### Create the certificate chain
 
 ```bash
