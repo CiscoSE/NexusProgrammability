@@ -21,10 +21,10 @@ Tests for this tutorial are done using [gnmic](https://github.com/karimra/gnmic)
 
 ## Server certificate
 
-A server certificate will allow you to connect to a NX-OS device securely, without need of skipping TLS verification for TLS connections. 
+A server certificate will allow you to connect to an NX-OS device securely, without the need to skip TLS verification for TLS connections. 
 
-!!! note ""
-    It is assumed that you have a valid root and intermediate CA certificates installed in your workstation. Instructions can be found at the top of this article on how to set that up 
+!!! note
+    It is assumed that you have a valid root and intermediate CA certificates installed in your workstation. Instructions can be found at the top of this article on how to set that up.
 
 #### Add the subjectAltName setting 
 
