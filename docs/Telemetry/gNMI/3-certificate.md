@@ -26,9 +26,9 @@ A server certificate will allow you to connect to an NX-OS device securely, with
 !!! note
     It is assumed that you have a valid root and intermediate CA certificates installed in your workstation. Instructions can be found at the top of this article on how to set that up.
 
-#### Add the subjectAltName setting 
+#### Add the subjectAltName option
 
-Use the intermediate/openssl.cnf file (server_cert section):
+Add the 'subjectAltName=${ENV::SAN}' option to the intermediate/openssl.cnf file under the [ server_cert ] section. The final configuration for this section can be seen below:
 
 ```
 [ server_cert ]
