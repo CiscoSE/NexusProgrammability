@@ -19,16 +19,17 @@ Make sure keys and certificates are protected.
 
 Tests for this tutorial are done using [gnmic](https://github.com/karimra/gnmic) and [pygnmi](https://pypi.org/project/pygnmi/)
 
-## Server certificate
-
-A server certificate will allow you to connect to an NX-OS device securely, without the need to skip TLS verification for TLS connections.
-
+## Preparing your server
 !!! note
-    It is assumed that you have a valid root and intermediate CA certificates installed in your workstation. Instructions can be found at the top of this article on how to set that up.
+    This section contains instructions for an OpenSSL Linux server. If you are using a different platform to host your CA, please ensure the correct options are set for your platform.
+
+Your CA can sign server and client certificates. The options in this section will need to be set for the type of certificate you would like to use.
 
 #### Add the subjectAltName option
 
-Add the `subjectAltName=${ENV::SAN}` option to the intermediate/openssl.cnf file under the [ server_cert ] section. The final configuration for this section can be seen below:
+Add the `subjectAltName=${ENV::SAN}` option to the /root/ca/intermediate/openssl.cnf file. This will be added under the [ server_cert ] or the [ usr_cert ] section, based on the type of certificate you are using.
+
+server_cert example:
 
 ```
 [ server_cert ]
@@ -43,6 +44,21 @@ keyUsage = critical, digitalSignature, keyEncipherment
 extendedKeyUsage = serverAuth
 ```
 
+usr_cert example:
+
+```
+[ usr_cert ]
+# Extensions for client certificates (`man x509v3_config`).
+basicConstraints = CA:FALSE
+subjectAltName=${ENV::SAN}
+nsCertType = client, email
+nsComment = "OpenSSL Generated Client Certificate"
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer
+keyUsage = critical, nonRepudiation, digitalSignature, keyEncipherment
+extendedKeyUsage = clientAuth, emailProtection
+```
+
 The value `${ENV::SAN}` instructs openssl to look for the value of the subjectAltName in an environmental variable called _SAN_
 
 #### Set the SAN variable. 
@@ -54,6 +70,14 @@ In this example, the device name is nx93000v-01.cisco.com and its management IP 
 ```bash
 export SAN=DNS:nx9300v-01,DNS:nx9300v-01.cisco.com,IP:192.168.1.1
 ```
+
+## Server certificate
+
+A server certificate will allow you to connect to an NX-OS device securely, without the need to skip TLS verification for TLS connections.
+
+!!! note
+    It is assumed that you have a valid root and intermediate CA certificates installed in your workstation. Instructions can be found at the top of this article on how to set that up.
+
 #### Create key and certificate 
 
 Although the file name is trivial, it is a best practice to use the hostname of the device or other identifier that summarizes the purpose of the certificate.
