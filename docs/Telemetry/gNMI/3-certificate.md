@@ -9,19 +9,19 @@ NX-OS only supports TLS connection on gRPC, mTLS is supported since 10.1(1). The
 - Server certificate: Used to encrypt the gRPC connection between the client and the device (in this case, the gNMI server or target)
 - Client certificate: Used to authenticate a gRPC connection
 
-To create any type of certificate, a certificate authority (CA) is required. If you don't have one (or you are looking for something free), follow the steps in this excelent guide by Jamie Nguyen: [OpenSSL Certificate Authority](https://jamielinux.com/docs/openssl-certificate-authority/introduction.html)
+To create any type of certificate, a certificate authority (CA) is required. If you don't have one (or you are looking for something free), follow the steps in this excellent guide by Jamie Nguyen: [OpenSSL Certificate Authority](https://jamielinux.com/docs/openssl-certificate-authority/introduction.html)
 
 An acurate time is important when dealing with TLS certificates. It is recommended to setup NTP in the client and servers/devices. If you see errors related to certificate not valid yet or expired it is probably that the device or the client don't have a correct time set.
 
-For simplicity, this tutorial uses root but other users with less priviledges can be used. 
+For simplicity, this tutorial uses root but other users with less priviledges can be used.
 
-Make sure keys and certificates are protected
+Make sure keys and certificates are protected.
 
 Tests for this tutorial are done using [gnmic](https://github.com/karimra/gnmic) and [pygnmi](https://pypi.org/project/pygnmi/)
 
 ## Server certificate
 
-A server certificate will allow you to connect to an NX-OS device securely, without the need to skip TLS verification for TLS connections. 
+A server certificate will allow you to connect to an NX-OS device securely, without the need to skip TLS verification for TLS connections.
 
 !!! note
     It is assumed that you have a valid root and intermediate CA certificates installed in your workstation. Instructions can be found at the top of this article on how to set that up.
@@ -116,7 +116,7 @@ scp intermediate/certs/nx9300v-01.cisco.com.pfk  admin@192.168.1.1:
 ```
 #### Import the pkcs12 file 
 
-Execute the following commands on the device. For this example, "supersecret" was used as password the step before 
+Execute the following commands on the device. For this example, "supersecret" was used as the password. 
 
 ```cli
 nx9300v_01# configure
