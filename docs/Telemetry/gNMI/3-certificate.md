@@ -108,7 +108,7 @@ cat certs/ca.cert.pem >> intermediate/certs/nx9300v-01.cisco.com.chain.cert.pem
 #### Export the file into the device. 
 
 !!! note
-    Make sure to remember the export password
+    Make sure to export the password. Also, your NX-OS device will need the `scp-server` feature enabled to accept the SCP transfer.
 
 ```bash
 openssl pkcs12 -export -out intermediate/certs/nx9300v-01.cisco.com.pfk -inkey intermediate/private/nx9300v-01.cisco.com.key.pem -in intermediate/certs/nx9300v-01.cisco.com.chain.cert.pem
