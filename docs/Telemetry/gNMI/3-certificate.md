@@ -28,7 +28,7 @@ A server certificate will allow you to connect to an NX-OS device securely, with
 
 #### Add the subjectAltName option
 
-Add the `subjectAltName=${ENV::SAN}` option to the /root/ca/intermediate/openssl.cnf file. This will be added under the [ server_cert ] section.
+Add the `subjectAltName=${ENV::SAN}` option to the /root/ca/intermediate/openssl.cnf file. This will be added in the [ server_cert ] section.
 
 server_cert example:
 
