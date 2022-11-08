@@ -26,7 +26,7 @@ switch# grpc certificate TRUSTPOINT
 #### Set Dial-In Call Limits
 Set the limit of simultaneous dial-in calls to the gNMI server on the device.
 ```
-switch# grpc gnmi max-concurrent-call 8
+switch# grpc gnmi max-concurrent-calls 8
 ```
 !!! Note
     - The limit can be from 1 to 16. Default is 8.
