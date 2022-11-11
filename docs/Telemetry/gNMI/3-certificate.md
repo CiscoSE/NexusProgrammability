@@ -28,7 +28,7 @@ A server certificate will allow you to connect to an NX-OS device securely, with
 
 #### Add the subjectAltName option
 
-Add the `subjectAltName=${ENV::SAN}` option to the /root/ca/intermediate/openssl.cnf file. This will be added in the [ server_cert ] section.
+gRPC does not use the CN attribute of the certificate to verify hostname. Add the `subjectAltName=${ENV::SAN}` option to the /root/ca/intermediate/openssl.cnf file. This will be added in the [ server_cert ] section.
 
 server_cert example:
 
@@ -80,7 +80,7 @@ openssl req -config intermediate/openssl.cnf -key intermediate/private/nx9300v-0
     State or Province Name [England]:CO
     Locality Name []:
     Organization Name [Alice Ltd]:Nexus
-    Organizational Unit Name []:Datacenter 
+    Organizational Unit Name []:Datacenter
     Common Name []:nx9300v-01.cisco.com
     Email Address []:
     ```
@@ -214,7 +214,7 @@ Create CSR:
 openssl req -config intermediate/openssl.cnf -key intermediate/private/admin.key.pem -new -sha256 -out intermediate/csr/admin.csr.pem
 ```
 
-!!! example
+??? example
     ```
     -----
     Country Name (2 letter code) [GB]:US
