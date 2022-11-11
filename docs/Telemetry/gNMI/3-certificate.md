@@ -287,7 +287,7 @@ targets:
 ```
 # gnmic get --path /System/name 
 ```
-!!! example "Output"
+??? example "Output"
     ```json
     [
       {
