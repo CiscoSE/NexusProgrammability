@@ -136,7 +136,7 @@ nx9300v_01(config)# grpc certificate server
 Use the certificate chain file, not the standalone certificate file. The `--skip-verify` option should not be needed
 
 ```
-# gnmic -a nx9300v-01.cisco.com:50051 -u admin -p YOURPASSWORD get --path /System/name --tls-cert intermediate/certs/nx9300v-01.cisco.com.chain.cert.pem --tls-key intermediate/private/nx9300v-01.cisco.com.key.pem -e json --tls-ca intermediate/certs/ca-chain.cert.pem 
+gnmic -a nx9300v-01.cisco.com:50051 -u admin -p YOURPASSWORD get --path /System/name --tls-cert intermediate/certs/nx9300v-01.cisco.com.chain.cert.pem --tls-key intermediate/private/nx9300v-01.cisco.com.key.pem -e json --tls-ca intermediate/certs/ca-chain.cert.pem
 ```
 
 ??? example "Output"
