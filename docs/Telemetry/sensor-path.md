@@ -161,6 +161,8 @@
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 | All CDP info | | /System/cdp-items/inst-items |
+| CDP status | | /System/cdp-items/inst-items/adminSt |
+| Holdtime | | /System/cdp-items/inst-items/holdIntvl |
 
 ## LLDP
 | Metric      | Openconfig Model | Native Model |
