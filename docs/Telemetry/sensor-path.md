@@ -157,6 +157,11 @@
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 
+## CDP
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+| All CDP info | | /System/cdp-items/inst-items |
+
 ## LLDP
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
