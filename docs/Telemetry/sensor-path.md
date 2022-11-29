@@ -163,6 +163,9 @@
 | All CDP info | | /System/cdp-items/inst-items |
 | CDP status | | /System/cdp-items/inst-items/adminSt |
 | Holdtime | | /System/cdp-items/inst-items/holdIntvl |
+| Interface ID | | /System/cdp-items/inst-items/if-items/If-list/id |
+| Interface admin state | | /System/cdp-items/inst-items/if-items/If-list/adminSt |
+
 
 ## LLDP
 | Metric      | Openconfig Model | Native Model |
