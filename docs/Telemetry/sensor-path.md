@@ -173,6 +173,8 @@
 | Remote platform type | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/platId |
 | Remote interface | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/portId |
 | Remote MAC | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/remoteMAC |
+| Remote IP | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/intf-items/IntfAddr-list/addr |
+| Remote management IP | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/mgmt-items/MgmtAddr-list/addr |
 | Remote device name | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/sysName |
 | Remote device version | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/ver |
 
