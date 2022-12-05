@@ -163,9 +163,18 @@
 | All CDP info | | /System/cdp-items/inst-items |
 | CDP status | | /System/cdp-items/inst-items/adminSt |
 | Holdtime | | /System/cdp-items/inst-items/holdIntvl |
-| Interface ID | | /System/cdp-items/inst-items/if-items/If-list/id |
 | Interface admin state | | /System/cdp-items/inst-items/if-items/If-list/adminSt |
-
+| Interface ID | | /System/cdp-items/inst-items/if-items/If-list/id |
+| Interface VLAN | | /System/cdp-items/inst-items/if-items/If-list/nativeVlan |
+| Interface status| | /System/cdp-items/inst-items/if-items/If-list/operSt |
+| Port local MAC | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/localMAC |
+| Port MTU | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/mtu |
+| Neighbor capabilities | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/cap |
+| Remote platform type | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/platId |
+| Remote interface | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/portId |
+| Remote MAC | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/remoteMAC |
+| Remote device name | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/sysName |
+| Remote device version | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/ver |
 
 ## LLDP
 | Metric      | Openconfig Model | Native Model |
