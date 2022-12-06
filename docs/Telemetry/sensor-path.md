@@ -100,6 +100,16 @@
 | Fan speed (percent) | | /System/pie-items/env-items/fan-items/fan_env_info-items/fan_env_record-items/FanEnvRecord-list/fan_params-items/FanParams-list/fanSpeed |
 | Max RPM | | /System/pie-items/env-items/fan-items/fan_env_info-items/fan_env_record-items/FanEnvRecord-list/fan_params-items/FanParams-list/maxRpm |
 
+### Platform - Chassis
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+| Chassis model | | /System/ch-items/descr |
+| All line cards | | /System/ch-items/lcslot-items/LCSlot-list |
+| Line card ID | | /System/ch-items/lcslot-items/LCSlot-list/lc-items/id |
+| Line card Model | | /System/ch-items/lcslot-items/LCSlot-list/lc-items/descr |
+| Line card hardware version | | /System/ch-items/lcslot-items/LCSlot-list/lc-items/hwVer |
+| LIne card breakout factor | | /System/ch-items/lcslot-items/LCSlot-list/lc-items/breakoutFactor |
+
 ## System Hardware
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
