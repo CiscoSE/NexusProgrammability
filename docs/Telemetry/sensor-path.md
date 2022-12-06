@@ -103,12 +103,19 @@
 ### Platform - Chassis
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
-| Chassis model | | /System/ch-items/descr |
+| Chassis description | | /System/ch-items/descr |
 | All line cards | | /System/ch-items/lcslot-items/LCSlot-list |
 | Line card ID | | /System/ch-items/lcslot-items/LCSlot-list/lc-items/id |
-| Line card Model | | /System/ch-items/lcslot-items/LCSlot-list/lc-items/descr |
+| Line card description | | /System/ch-items/lcslot-items/LCSlot-list/lc-items/descr |
+| Line card model | | /System/ch-items/lcslot-items/LCSlot-list/lc-items/model |
 | Line card hardware version | | /System/ch-items/lcslot-items/LCSlot-list/lc-items/hwVer |
-| LIne card breakout factor | | /System/ch-items/lcslot-items/LCSlot-list/lc-items/breakoutFactor |
+| Line card breakout factor | | /System/ch-items/lcslot-items/LCSlot-list/lc-items/breakoutFactor |
+| Line card MAC | | /System/ch-items/lcslot-items/LCSlot-list/lc-items/macB |
+| Line card MAC end | | /System/ch-items/lcslot-items/LCSlot-list/lc-items/macE |
+| Line card number of ports | | /System/ch-items/lcslot-items/LCSlot-list/lc-items/numP |
+| Line card operational state | | /System/ch-items/lcslot-items/LCSlot-list/lc-items/operSt |
+| Line card part number | | /System/ch-items/lcslot-items/LCSlot-list/lc-items/partNumber |
+| Line card power state | | /System/ch-items/lcslot-items/LCSlot-list/lc-items/pwrSt |
 
 ## System Hardware
 | Metric      | Openconfig Model | Native Model |
