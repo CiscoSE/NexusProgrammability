@@ -183,6 +183,9 @@
 | Ingress errors | /interfaces/interface/state/counters/in-errors | |
 | Interface status | /interfaces/interface/state/oper-status | |
 | Egress errors | /interfaces/interface/state/counters/out-errors | |
+| Default layer | | /System/ethpm-items/inst-items/systemDefaultLayer |
+| Default admin state | | /System/ethpm-items/inst-items/systemDefaultAdminSt |
+| System jumbo MTU size (bytes) | | /System/ethpm-items/inst-items/systemJumboMtu |
 
 ## ARP
 | Metric      | Openconfig Model | Native Model |
