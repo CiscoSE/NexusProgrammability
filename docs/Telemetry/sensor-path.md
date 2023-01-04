@@ -132,6 +132,20 @@
 | Supervisor CPU cores | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/cpu-items/CPU-list/cores |
 | Supervisor CPU cores enabled | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/cpu-items/CPU-list/coresEn |
 | Supervisor CPU threads | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/cpu-items/CPU-list/thrds |
+| Supervisor RAM DIMM ID | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/dimm-items/Dimm-list/id |
+| Supervisor RAM total | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/dimm-items/Dimm-list/cap |
+| Supervisor RAM used | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/dimm-items/Dimm-list/used |
+| Supervisor temp sensors | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/sensor-items/Sensor-list |
+| Supervisor temp sensor ID | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/sensor-items/Sensor-list/id |
+| Supervisor temp sensor type | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/sensor-items/Sensor-list/type |
+| Supervisor temp sensor major threshold | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/sensor-items/Sensor-list/majorThresh |
+| Supervisor temp sensor minor threshold | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/sensor-items/Sensor-list/minorThresh |
+| Supervisor temp sensor status | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/sensor-items/Sensor-list/operSt |
+| Supervisor temp sensor current temp | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/sensor-items/Sensor-list/tempValue |
+| Supervisor temp sensor temp unit | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/sensor-items/Sensor-list/unit |
+
+
+
 
 ## System Hardware
 | Metric      | Openconfig Model | Native Model |
