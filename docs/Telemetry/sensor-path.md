@@ -125,7 +125,13 @@
 | Supervisor physical presence | | /System/ch-items/supslot-items/SupCSlot-list/operSt |
 | Supervisor power status | | /System/ch-items/supslot-items/SupCSlot-list/poweroff |
 | Supervisor CPU ID | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/cpu-items/CPU-list/id |
-
+| Supervisor CPU vendor | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/cpu-items/CPU-list/vendor |
+| Supervisor CPU model | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/cpu-items/CPU-list/model |
+| Supervisor CPU architecture | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/cpu-items/CPU-list/arch |
+| Supervisor CPU speed (GHz) | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/cpu-items/CPU-list/speed |
+| Supervisor CPU cores | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/cpu-items/CPU-list/cores |
+| Supervisor CPU cores enabled | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/cpu-items/CPU-list/coresEn |
+| Supervisor CPU threads | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/cpu-items/CPU-list/thrds |
 
 ## System Hardware
 | Metric      | Openconfig Model | Native Model |
