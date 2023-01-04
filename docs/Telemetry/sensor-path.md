@@ -119,6 +119,13 @@
 | Line card part number | | /System/ch-items/lcslot-items/LCSlot-list/lc-items/partNumber |
 | Line card power state | | /System/ch-items/lcslot-items/LCSlot-list/lc-items/pwrSt |
 | Line card physical presence | | /System/ch-items/lcslot-items/LCSlot-list/operSt |
+| Supervisor ID | | /System/ch-items/supslot-items/SupCSlot-list/id |
+| Supervisor location | | /System/ch-items/supslot-items/SupCSlot-list/loc |
+| Supervisor slot description | | /System/ch-items/supslot-items/SupCSlot-list/descr |
+| Supervisor physical presence | | /System/ch-items/supslot-items/SupCSlot-list/operSt |
+| Supervisor power status | | /System/ch-items/supslot-items/SupCSlot-list/poweroff |
+| Supervisor CPU ID | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/cpu-items/CPU-list/id |
+
 
 ## System Hardware
 | Metric      | Openconfig Model | Native Model |
