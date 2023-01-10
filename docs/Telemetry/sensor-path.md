@@ -1,5 +1,85 @@
 # Common Sensor Paths
 
+## ARP
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+| Admin state | | /System/arp-items/inst-items/adminSt |
+| Operational state | | /System/arp-items/operSt |
+| Allow ARP outside subnet | | /System/arp-items/inst-items/allowStaticArpOutsideSubnet |
+| Cache limit | | /System/arp-items/inst-items/cacheLimit |
+
+## BGP
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+
+## CDP
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+| All CDP info | | /System/cdp-items/inst-items |
+| CDP status | | /System/cdp-items/inst-items/adminSt |
+| Holdtime | | /System/cdp-items/inst-items/holdIntvl |
+| Interface admin state | | /System/cdp-items/inst-items/if-items/If-list/adminSt |
+| Interface ID | | /System/cdp-items/inst-items/if-items/If-list/id |
+| Interface VLAN | | /System/cdp-items/inst-items/if-items/If-list/nativeVlan |
+| Interface status| | /System/cdp-items/inst-items/if-items/If-list/operSt |
+| Port local MAC | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/localMAC |
+| Port MTU | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/mtu |
+| Neighbor capabilities | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/cap |
+| Remote platform type | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/platId |
+| Remote interface | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/portId |
+| Remote MAC | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/remoteMAC |
+| Remote IP | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/intf-items/IntfAddr-list/addr |
+| Remote management IP | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/mgmt-items/MgmtAddr-list/addr |
+| Remote device name | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/sysName |
+| Remote device version | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/ver |
+
+## Interface
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+| Interface counters | 	/interfaces/interface/state/counters | 	/System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items |
+| Admin status | /interfaces/interface/state/admin-status | |
+| Interface descriptions | /interfaces/interface/state/description | |
+| Interface names | /interfaces/interface/state/name | |
+| Ingress packets discarded | /interfaces/interface/state/counters/in-discards | |
+| Egress packets discarded | /interfaces/interface/state/counters/out-discards | |
+| Ingress broadcast packets | /interfaces/interface/state/counters/in-broadcast-pkts | |
+| Ingress multicast packets | /interfaces/interface/state/counters/in-multicast-pkts | |
+| Ingress bytes | /interfaces/interface/state/counters/in-octets | |
+| Ingress unicast packets | /interfaces/interface/state/counters/in-unicast-pkts | |
+| Egress broadcast packets | /interfaces/interface/state/counters/out-broadcast-pkts | |
+| Egress multicast packets | /interfaces/interface/state/counters/out-multicast-pkts | |
+| Egress bytes | /interfaces/interface/state/counters/out-octets | |
+| Egress unicast packets | /interfaces/interface/state/counters/out-unicast-pkts | |
+| Ingress errors | /interfaces/interface/state/counters/in-errors | |
+| Interface status | /interfaces/interface/state/oper-status | |
+| Egress errors | /interfaces/interface/state/counters/out-errors | |
+| Default layer | | /System/ethpm-items/inst-items/systemDefaultLayer |
+| Default admin state | | /System/ethpm-items/inst-items/systemDefaultAdminSt |
+| System jumbo MTU size (bytes) | | /System/ethpm-items/inst-items/systemJumboMtu |
+
+## ISIS
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+
+## LACP
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+
+## LLDP
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+| All LLDP information | /lldp/interfaces/interface | |
+| LLDP neighbor ID type | /lldp/interfaces/interface/neighbors/neighbor/state/chassis-id-type | |
+| LLDP chassis ID | /lldp/interfaces/interface/neighbors/neighbor/state/chassis-id | |
+| Port ID type | /lldp/interfaces/interface/neighbors/neighbor/state/port-id-type | |
+| Neighbor port ID | /lldp/interfaces/interface/neighbors/neighbor/state/port-id | |
+| State status and type | /lldp/interfaces/interface/neighbors/neighbor/capabilities/capability/state | |
+| State status | /lldp/interfaces/interface/neighbors/neighbor/capabilities/capability/state/enabled | |
+
+## OSPF
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+
 ## Platform
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
@@ -144,8 +224,9 @@
 | Supervisor temp sensor current temp | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/sensor-items/Sensor-list/tempValue |
 | Supervisor temp sensor temp unit | | /System/ch-items/supslot-items/SupCSlot-list/sup-items/sensor-items/Sensor-list/unit |
 
-
-
+## QOS
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
 
 ## System Hardware
 | Metric      | Openconfig Model | Native Model |
@@ -162,86 +243,6 @@
 | CPU state maximum utilization | /components/component/cpu/utilization/state/max | |
 | Fan speed | /components/component/fan/state/speed | |
 | Fan state | /openconfig-platform:components/component/fan/state/ | |
-
-## Interface
-| Metric      | Openconfig Model | Native Model |
-| :--- | :--- | :--- |
-| Interface counters | 	/interfaces/interface/state/counters | 	/System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items |
-| Admin status | /interfaces/interface/state/admin-status | |
-| Interface descriptions | /interfaces/interface/state/description | |
-| Interface names | /interfaces/interface/state/name | |
-| Ingress packets discarded | /interfaces/interface/state/counters/in-discards | |
-| Egress packets discarded | /interfaces/interface/state/counters/out-discards | |
-| Ingress broadcast packets | /interfaces/interface/state/counters/in-broadcast-pkts | |
-| Ingress multicast packets | /interfaces/interface/state/counters/in-multicast-pkts | |
-| Ingress bytes | /interfaces/interface/state/counters/in-octets | |
-| Ingress unicast packets | /interfaces/interface/state/counters/in-unicast-pkts | |
-| Egress broadcast packets | /interfaces/interface/state/counters/out-broadcast-pkts | |
-| Egress multicast packets | /interfaces/interface/state/counters/out-multicast-pkts | |
-| Egress bytes | /interfaces/interface/state/counters/out-octets | |
-| Egress unicast packets | /interfaces/interface/state/counters/out-unicast-pkts | |
-| Ingress errors | /interfaces/interface/state/counters/in-errors | |
-| Interface status | /interfaces/interface/state/oper-status | |
-| Egress errors | /interfaces/interface/state/counters/out-errors | |
-| Default layer | | /System/ethpm-items/inst-items/systemDefaultLayer |
-| Default admin state | | /System/ethpm-items/inst-items/systemDefaultAdminSt |
-| System jumbo MTU size (bytes) | | /System/ethpm-items/inst-items/systemJumboMtu |
-
-## ARP
-| Metric      | Openconfig Model | Native Model |
-| :--- | :--- | :--- |
-| Admin state | | /System/arp-items/inst-items/adminSt |
-| Operational state | | /System/arp-items/operSt |
-| Allow ARP outside subnet | | /System/arp-items/inst-items/allowStaticArpOutsideSubnet |
-| Cache limit | | /System/arp-items/inst-items/cacheLimit |
-
-## BGP
-| Metric      | Openconfig Model | Native Model |
-| :--- | :--- | :--- |
-
-## OSPF
-| Metric      | Openconfig Model | Native Model |
-| :--- | :--- | :--- |
-
-## ISIS
-| Metric      | Openconfig Model | Native Model |
-| :--- | :--- | :--- |
-
-## CDP
-| Metric      | Openconfig Model | Native Model |
-| :--- | :--- | :--- |
-| All CDP info | | /System/cdp-items/inst-items |
-| CDP status | | /System/cdp-items/inst-items/adminSt |
-| Holdtime | | /System/cdp-items/inst-items/holdIntvl |
-| Interface admin state | | /System/cdp-items/inst-items/if-items/If-list/adminSt |
-| Interface ID | | /System/cdp-items/inst-items/if-items/If-list/id |
-| Interface VLAN | | /System/cdp-items/inst-items/if-items/If-list/nativeVlan |
-| Interface status| | /System/cdp-items/inst-items/if-items/If-list/operSt |
-| Port local MAC | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/localMAC |
-| Port MTU | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/mtu |
-| Neighbor capabilities | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/cap |
-| Remote platform type | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/platId |
-| Remote interface | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/portId |
-| Remote MAC | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/remoteMAC |
-| Remote IP | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/intf-items/IntfAddr-list/addr |
-| Remote management IP | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/mgmt-items/MgmtAddr-list/addr |
-| Remote device name | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/sysName |
-| Remote device version | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/ver |
-
-## LLDP
-| Metric      | Openconfig Model | Native Model |
-| :--- | :--- | :--- |
-| All LLDP information | /lldp/interfaces/interface | |
-| LLDP neighbor ID type | /lldp/interfaces/interface/neighbors/neighbor/state/chassis-id-type | |
-| LLDP chassis ID | /lldp/interfaces/interface/neighbors/neighbor/state/chassis-id | |
-| Port ID type | /lldp/interfaces/interface/neighbors/neighbor/state/port-id-type | |
-| Neighbor port ID | /lldp/interfaces/interface/neighbors/neighbor/state/port-id | |
-| State status and type | /lldp/interfaces/interface/neighbors/neighbor/capabilities/capability/state | |
-| State status | /lldp/interfaces/interface/neighbors/neighbor/capabilities/capability/state/enabled | |
-
-## LACP
-| Metric      | Openconfig Model | Native Model |
-| :--- | :--- | :--- |
 
 ## VLAN
 | Metric      | Openconfig Model | Native Model |
