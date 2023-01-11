@@ -230,10 +230,12 @@
 | All QOS info | /oc-qos:qos | |
 | Interface ID | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:interface-id | |
 | All output queue stats | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state | |
-| Output queue dropped packets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:dropped-pkts | |
 | Output queue name | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:name | |
+| Output queue dropped packets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:dropped-pkts | |
 | Output queue transmit octets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:transmit-octets | |
 | Output queue transmit packets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:transmit-pkts | |
+| Input queue name | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:input/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:name | |
+| Input queue dropped packets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:input/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:dropped-pkts  | |
 | Dynamic buffer share | | /System/ipqos-items/dynamicBufferShare |
 
 ## System Hardware
