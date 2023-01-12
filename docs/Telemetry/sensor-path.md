@@ -227,15 +227,15 @@
 ## QOS
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
-| All QOS info | /oc-qos:qos | |
+| All QOS info | /oc-qos:qos | /System/ipqos-items |
 | Interface ID | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:interface-id | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/name |
 | All output queue stats | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list |
 | Output queue name | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:name | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/cmapName |
-| Output queue dropped packets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:dropped-pkts | |
+| Output queue dropped packets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:dropped-pkts | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/dropPackets |
 | Output queue transmit octets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:transmit-octets | |
 | Output queue transmit packets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:transmit-pkts | |
-| Input queue name | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:input/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:name | |
-| Input queue dropped packets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:input/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:dropped-pkts  | |
+| Input queue name | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:input/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:name | /System/ipqos-items/queuing-items/policy-items/in-items/intf-items/If-list/queCmap-items/QueuingStats-list/cmapName |
+| Input queue dropped packets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:input/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:dropped-pkts  | /System/ipqos-items/queuing-items/policy-items/in-items/intf-items/If-list/queCmap-items/QueuingStats-list/dropPackets |
 | Dynamic buffer share | | /System/ipqos-items/dynamicBufferShare |
 
 ## System Hardware
