@@ -231,7 +231,11 @@
 | Interface ID | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:interface-id | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/name |
 | All output queue stats | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list |
 | Output queue name | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:name | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/cmapName |
+| Output queue current depth (bytes) | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/currQueueDepth |
+| Output queue dropped byte count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/dropBytes |
 | Output queue dropped packets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:dropped-pkts | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/dropPackets |
+| Output queue ingress queue depth | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/ingQDepthBytes |
+| Output queue ingress queue dropped packet count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/ingQDropPackets |
 | Output queue transmit octets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:transmit-octets | |
 | Output queue transmit packets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:transmit-pkts | |
 | Input queue name | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:input/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:name | /System/ipqos-items/queuing-items/policy-items/in-items/intf-items/If-list/queCmap-items/QueuingStats-list/cmapName |
