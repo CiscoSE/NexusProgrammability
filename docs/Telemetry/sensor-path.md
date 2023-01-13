@@ -241,7 +241,8 @@
 | :--- | :--- | :--- |
 | Interface ID | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:interface-id | Interface ID /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/name |
 | All stats | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list |
-| Queue name | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:name | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/cmapName |
+| Class map name | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:name | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/cmapName |
+| Policy map name | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/pmapName |
 | Current queue depth (bytes) | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/currQueueDepth |
 | Dropped byte count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/dropBytes |
 | Dropped packets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:dropped-pkts | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/dropPackets |
@@ -255,6 +256,10 @@
 | Multicast transmit byte count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/mcTxBytes |
 | Multicast transmit packet count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/mcTxPackets |
 | Priority-based flow control per packet pause received count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/pfcRxPpp |
+| Priority-based flow control per packet pause transmitted count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/pfcTxPpp |
+| Priority-based flow control watchdog queue flushed packets | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/pfcwdFlushedPackets |
+| Priority-based flow control watchdog queue restored count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/pfcwdRestoredCount |
+| Priority-based flow control watchdog queue shutdown count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/pfcwdShutdownCount |
 
 ## System Hardware
 | Metric      | Openconfig Model | Native Model |
