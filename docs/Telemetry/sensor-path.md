@@ -249,7 +249,7 @@
 | Ingress queue depth | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/ingQDepthBytes |
 | Ingress queue dropped packet count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/ingQDropPackets |
 | Transmit octets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:transmit-octets | |
-| Transmit packets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:transmit-pkts | |
+| Transmit packets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:transmit-pkts | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/txPackets |
 | Multicast queue depth | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/mcCurrQueueDepth |
 | Multicast dropped bytes count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/mcDropBytes |
 | Multicast dropped packet count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/mcDropPackets |
@@ -260,6 +260,14 @@
 | Priority-based flow control watchdog queue flushed packets | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/pfcwdFlushedPackets |
 | Priority-based flow control watchdog queue restored count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/pfcwdRestoredCount |
 | Priority-based flow control watchdog queue shutdown count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/pfcwdShutdownCount |
+| Random detect ECN marked packet count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/randEcnMarkedPackets |
+| QOS statistic type | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/statType |
+| Transmit byte count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/txBytes |
+| Unicast current queue depth (bytes) | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/ucCurrQueueDepth |
+| Unicast droped bytes count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/ucDropBytes |
+| Unicast droped packet count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/ucDropPackets |
+| Unicast transmit byte count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/ucTxBytes |
+| Unicast transmit packet count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/ucTxPackets |
 
 ## System Hardware
 | Metric      | Openconfig Model | Native Model |
