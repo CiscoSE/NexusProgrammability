@@ -228,19 +228,33 @@
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 | All QOS info | /oc-qos:qos | /System/ipqos-items |
-| Interface ID | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:interface-id | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/name |
-| All output queue stats | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list |
-| Output queue name | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:name | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/cmapName |
-| Output queue current depth (bytes) | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/currQueueDepth |
-| Output queue dropped byte count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/dropBytes |
-| Output queue dropped packets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:dropped-pkts | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/dropPackets |
-| Output queue ingress queue depth | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/ingQDepthBytes |
-| Output queue ingress queue dropped packet count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/ingQDropPackets |
-| Output queue transmit octets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:transmit-octets | |
-| Output queue transmit packets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:transmit-pkts | |
+| Dynamic buffer share | | /System/ipqos-items/dynamicBufferShare |
+
+### QOS - Input Queue
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
 | Input queue name | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:input/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:name | /System/ipqos-items/queuing-items/policy-items/in-items/intf-items/If-list/queCmap-items/QueuingStats-list/cmapName |
 | Input queue dropped packets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:input/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:dropped-pkts  | /System/ipqos-items/queuing-items/policy-items/in-items/intf-items/If-list/queCmap-items/QueuingStats-list/dropPackets |
-| Dynamic buffer share | | /System/ipqos-items/dynamicBufferShare |
+
+### QOS - Output Queue
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+| Interface ID | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:interface-id | Interface ID /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/name |
+| All stats | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list |
+| Queue name | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:name | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/cmapName |
+| Current queue depth (bytes) | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/currQueueDepth |
+| Dropped byte count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/dropBytes |
+| Dropped packets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:dropped-pkts | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/dropPackets |
+| Ingress queue depth | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/ingQDepthBytes |
+| Ingress queue dropped packet count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/ingQDropPackets |
+| Transmit octets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:transmit-octets | |
+| Transmit packets | /oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:transmit-pkts | |
+| Multicast queue depth | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/mcCurrQueueDepth |
+| Multicast dropped bytes count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/mcDropBytes |
+| Multicast dropped packet count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/mcDropPackets |
+| Multicast transmit byte count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/mcTxBytes |
+| Multicast transmit packet count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/mcTxPackets |
+| Priority-based flow control per packet pause received count | | /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/pfcRxPpp |
 
 ## System Hardware
 | Metric      | Openconfig Model | Native Model |
