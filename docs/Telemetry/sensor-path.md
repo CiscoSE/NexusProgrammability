@@ -33,6 +33,15 @@
 | Remote device name | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/sysName |
 | Remote device version | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/ver |
 
+## CoPP
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+| Admin state | | /System/copp-items/adminSt |
+| Operational state | | /System/copp-items/operSt |
+| Class rate limiter state | | /System/copp-items/enableFlag |
+| Error code | | /System/copp-items/error |
+| Profile | | /System/copp-items/profile-items/prof |
+
 ## Interface
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
