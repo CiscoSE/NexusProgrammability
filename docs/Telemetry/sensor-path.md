@@ -42,6 +42,14 @@
 | Error code | | /System/copp-items/error |
 | Profile | | /System/copp-items/profile-items/prof |
 
+## gRPC
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+| Listening port | | /System/grpc-items/port |
+| Keepalive timeout | | /System/grpc-items/gnmi-items/keepAliveTimeout |
+| Max calls allowed | | /System/grpc-items/gnmi-items/maxCalls |
+| Minimum sample interval (seconds) | | /System/grpc-items/gnmi-items/minSampleInterval |
+
 ## Interface
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
