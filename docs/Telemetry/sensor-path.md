@@ -73,6 +73,15 @@
 | Default layer | | /System/ethpm-items/inst-items/systemDefaultLayer |
 | Default admin state | | /System/ethpm-items/inst-items/systemDefaultAdminSt |
 | System jumbo MTU size (bytes) | | /System/ethpm-items/inst-items/systemJumboMtu |
+| FEC Mode | | /System/intf-items/phys-items/PhysIf-list/FECMode |
+| Access VLAN | | /System/intf-items/phys-items/PhysIf-list/accessVlan |
+| Bundle port number | | /System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/bdlPortNum |
+| Port channel state | | /System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/channelingSt |
+| Member port flags | | /System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/flags |
+| LTL programmed | | /System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/ltlProgrammed |
+| Aggregation operational state | | /System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/operSt |
+| Summarized operational state | | /System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/summOperSt |
+| Aggregation member uptime | | /System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/uptime |
 
 ## ISIS
 | Metric      | Openconfig Model | Native Model |
