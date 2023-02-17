@@ -54,7 +54,7 @@
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 | Interface counters | 	/interfaces/interface/state/counters | 	/System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items |
-| Admin status | /interfaces/interface/state/admin-status | |
+| Admin status | /interfaces/interface/state/admin-status | /System/intf-items/phys-items/PhysIf-list/adminSt |
 | Interface descriptions | /interfaces/interface/state/description | |
 | Interface names | /interfaces/interface/state/name | |
 | Ingress packets discarded | /interfaces/interface/state/counters/in-discards | |
@@ -83,6 +83,12 @@
 | Summarized operational state | | /System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/summOperSt |
 | Aggregation member uptime | | /System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/uptime |
 | Auto negotiation status | | /System/intf-items/phys-items/PhysIf-list/autoNeg |
+| Beacon status | | /System/intf-items/phys-items/PhysIf-list/beacon |
+| Bandwidth parameter | | /System/intf-items/phys-items/PhysIf-list/bw |
+| Alignment errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/alignmentErrors |
+| Babble count | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/babble |
+| Carrier sense errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/carrierSenseErrors |
+| Control input unknown OP codes | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/controlInUnknownOpcodes |
 
 ## ISIS
 | Metric      | Openconfig Model | Native Model |
