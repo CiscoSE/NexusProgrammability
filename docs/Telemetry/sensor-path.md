@@ -82,6 +82,7 @@
 | Aggregation operational state | | /System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/operSt |
 | Summarized operational state | | /System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/summOperSt |
 | Aggregation member uptime | | /System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/uptime |
+| Auto negotiation status | | /System/intf-items/phys-items/PhysIf-list/autoNeg |
 
 ## ISIS
 | Metric      | Openconfig Model | Native Model |
