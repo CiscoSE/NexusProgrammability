@@ -89,6 +89,22 @@
 | Babble count | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/babble |
 | Carrier sense errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/carrierSenseErrors |
 | Control input unknown OP codes | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/controlInUnknownOpcodes |
+| Deferred transmissions | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/deferredTransmissions |
+| Excessive collisions | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/excessiveCollisions |
+| FCS errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/fCSErrors |
+| Frame too long count | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/frameTooLongs |
+| Input pause frames | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/inPauseFrames |
+| Input dribble | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/inputdribble |
+| Internal MAC receive errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/internalMacReceiveErrors |
+| Internal MAC transmit errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/internalMacTransmitErrors |
+| Late collisions count | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/lateCollisions |
+| Lost carrier errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/lostCarrierErrors |
+| Multiple collision frames | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/multipleCollisionFrames |
+| No carrier errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/noCarrierErrors |
+| Output pause frames | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/outPauseFrames |
+| Runts | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/runts |
+| SQET test errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/sQETTestErrors |
+| Single collision frames | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/singleCollisionFrames |
 
 ## ISIS
 | Metric      | Openconfig Model | Native Model |
