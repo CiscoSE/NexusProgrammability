@@ -105,6 +105,7 @@
 | Runts | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/runts |
 | SQET test errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/sQETTestErrors |
 | Single collision frames | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/singleCollisionFrames |
+| Symbol errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/symbolErrors |
 
 ## ISIS
 | Metric      | Openconfig Model | Native Model |
