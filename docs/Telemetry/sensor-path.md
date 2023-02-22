@@ -106,6 +106,13 @@
 | SQET test errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/sQETTestErrors |
 | Single collision frames | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/singleCollisionFrames |
 | Symbol errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/symbolErrors |
+| Broadcast packets | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/broadcastPkts |
+| CRC align errors | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/cRCAlignErrors |
+| Collisions | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/collisions |
+| Drop events | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/dropEvents |
+| Fragments | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/fragments |
+| Interface down drop | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/ifdowndrop |
+| Ignored | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/ignored |
 
 ## ISIS
 | Metric      | Openconfig Model | Native Model |
