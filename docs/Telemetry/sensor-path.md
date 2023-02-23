@@ -106,13 +106,18 @@
 | SQET test errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/sQETTestErrors |
 | Single collision frames | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/singleCollisionFrames |
 | Symbol errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/symbolErrors |
-| Broadcast packets | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/broadcastPkts |
-| CRC align errors | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/cRCAlignErrors |
-| Collisions | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/collisions |
-| Drop events | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/dropEvents |
-| Fragments | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/fragments |
+| Total Broadcast packets | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/broadcastPkts |
+| Total CRC align errors | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/cRCAlignErrors |
+| Total collisions | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/collisions |
+| Total drop events | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/dropEvents |
+| Total fragments | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/fragments |
 | Interface down drop | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/ifdowndrop |
-| Ignored | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/ignored |
+| Total ignored | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/ignored |
+| Total jabbers | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/jabbers |
+| Total multicast packets | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/multicastPkts |
+| Total octets | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/octets |
+| Total Overrun | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/overrun |
+
 
 ## ISIS
 | Metric      | Openconfig Model | Native Model |
