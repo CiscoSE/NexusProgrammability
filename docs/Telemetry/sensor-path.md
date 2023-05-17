@@ -157,7 +157,7 @@
 | Last reset reason | | /System/showversion-items/lastResetReason |
 | Last reset OS version | | /System/showversion-items/lastResetSysVersion |
 | Last reset time | | /System/showversion-items/lastResetTime |
-| System alarms | | /System/alarms-items/alarm-items/Alarm-list |
+| System alarms | /system/alarms | /System/alarms-items/alarm-items/Alarm-list |
 | Running config != startup config | | /System/configDirty |
 
 ### Platform - Boot
