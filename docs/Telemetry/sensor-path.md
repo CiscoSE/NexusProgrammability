@@ -55,6 +55,7 @@
 | :--- | :--- | :--- |
 | Interface counters | 	/interfaces/interface/state/counters | 	/System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items |
 | Admin status | /interfaces/interface/state/admin-status | /System/intf-items/phys-items/PhysIf-list/adminSt |
+| Operational status | /interfaces/interface/state/oper-status | |
 | Interface descriptions | /interfaces/interface/state/description | |
 | Interface names | /interfaces/interface/state/name | |
 | Ingress packets discarded | /interfaces/interface/state/counters/in-discards | |
