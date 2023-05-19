@@ -75,7 +75,7 @@
 | Default admin state | | /System/ethpm-items/inst-items/systemDefaultAdminSt |
 | System jumbo MTU size (bytes) | | /System/ethpm-items/inst-items/systemJumboMtu |
 | FEC Mode | | /System/intf-items/phys-items/PhysIf-list/FECMode |
-| Access VLAN | /interfaces/interface[name=eth1/24]/ethernet/switched-vlan/state/access-vlan/ | /System/intf-items/phys-items/PhysIf-list/accessVlan |
+| Access VLAN | /interfaces/interface/ethernet/switched-vlan/state/access-vlan/ | /System/intf-items/phys-items/PhysIf-list/accessVlan |
 | Bundle port number | | /System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/bdlPortNum |
 | Port channel state | | /System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/channelingSt |
 | Member port flags | | /System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/flags |
