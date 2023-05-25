@@ -7,6 +7,7 @@
 | Operational state | | /System/arp-items/operSt |
 | Allow ARP outside subnet | | /System/arp-items/inst-items/allowStaticArpOutsideSubnet |
 | Cache limit | | /System/arp-items/inst-items/cacheLimit |
+| Proxy ARP state | /interfaces/interface/subinterfaces/subinterface/ipv4/proxy-arp/config/mode | |
 
 ## BGP
 | Metric      | Openconfig Model | Native Model |
