@@ -17,7 +17,7 @@ For simplicity, this tutorial uses root but other users with less priviledges ca
 
 Make sure keys and certificates are protected.
 
-Tests for this tutorial are done using [gnmic](https://github.com/karimra/gnmic) and [pygnmi](https://pypi.org/project/pygnmi/)
+Tests for this tutorial are done using [gnmic](https://github.com/openconfig/gnmic) and [pygnmi](https://pypi.org/project/pygnmi/)
 
 ## Server certificate
 
