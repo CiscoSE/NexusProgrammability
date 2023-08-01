@@ -4,20 +4,20 @@ As per [gnmi specification](https://github.com/openconfig/reference/blob/master/
 !!! quote "3.1 Session Security, Authentication and RPC Authorization"
     The session between the client and server MUST be encrypted using TLS - and a target or client MUST NOT fall back to unencrypted sessions.
 
-NX-OS only supports TLS connection on gRPC, mTLS is supported since 10.1(1). There are two certificates required in this process:
+NX-OS only supports TLS connection on gRPC, mTLS is supported since NX-OS 10.1(1). There are two certificates required in this process:
 
 - Server certificate: Used to encrypt the gRPC connection between the client and the device (in this case, the gNMI server or target)
 - Client certificate: Used to authenticate a gRPC connection
 
-To create any type of certificate, a certificate authority (CA) is required. If you don't have one (or you are looking for something free), follow the steps in this excellent guide by Jamie Nguyen: [OpenSSL Certificate Authority](https://jamielinux.com/docs/openssl-certificate-authority/introduction.html)
+To create any type of certificate, a certificate authority (CA) is required. If you don't have one (or you are looking for something that is free), follow the steps in this guide by Jamie Nguyen: [OpenSSL Certificate Authority](https://jamielinux.com/docs/openssl-certificate-authority/introduction.html)
 
-Accurate time is important when dealing with TLS certificates. It is recommended to setup NTP in the client and servers/devices. If you see errors related to certificate not valid yet or expired, it is probably due to the client or server having the incorrect time set.
+Accurate time is important when dealing with TLS certificates. It is recommended to setup NTP on the client and servers/devices. If you see errors related to the certificate not being valid yet or expired, it is probably due to the client or server having the incorrect time set.
 
-For simplicity, this tutorial uses root but other users with less priviledges can be used.
+For simplicity, this tutorial uses root but other users with less privileges can be used.
 
-Make sure keys and certificates are protected.
+Make sure your keys and certificates are protected.
 
-Tests for this tutorial are done using [gnmic](https://github.com/openconfig/gnmic) and [pygnmi](https://pypi.org/project/pygnmi/)
+Tests for this tutorial are done using [gNMIc](https://github.com/openconfig/gnmic) and [pygNMI](https://pypi.org/project/pygnmi/)
 
 ## Server certificate
 
