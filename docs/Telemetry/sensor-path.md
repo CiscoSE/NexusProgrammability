@@ -343,10 +343,10 @@
 | Memory total | /system/memory/state/physical | /System/pie-items/modules-items/module-items/Module-list/memory-items/memory_usage-items/memTotal |
 | Component status | /components/component/state/oper-status | |
 | CPU total average utilization | /system/cpus/cpu/state/total/avg | |
-| CPU current utilization | /components/component/cpu/utilization/state/instant | |
-| CPU state average utilization | /components/component/cpu/utilization/state/avg | |
-| CPU state minimum utilization | /components/component/cpu/utilization/state/min | |
-| CPU state maximum utilization | /components/component/cpu/utilization/state/max | |
+| CPU current utilization | /components/component/cpu/utilization/state/instant | 	/System/procsys-items/syscpusummary-items/syscpu-items/SysCpu-list/total-items/pct |
+| CPU state average utilization | /components/component/cpu/utilization/state/avg | /System/procsys-items/syscpusummary-items/syscpu-items/SysCpu-list/total-items/avg |
+| CPU state minimum utilization | /components/component/cpu/utilization/state/min | /System/procsys-items/syscpusummary-items/syscpu-items/SysCpu-list/total-items/min |
+| CPU state maximum utilization | /components/component/cpu/utilization/state/max | /System/procsys-items/syscpusummary-items/syscpu-items/SysCpu-list/total-items/max|
 | Fan speed | /components/component/fan/state/speed | |
 | Fan state | /openconfig-platform:components/component/fan/state/ | |
 
