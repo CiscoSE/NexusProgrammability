@@ -59,15 +59,15 @@
 | Operational status | /interfaces/interface/state/oper-status | |
 | Interface descriptions | /interfaces/interface/state/description | |
 | Interface names | /interfaces/interface/state/name | |
+| Ingress octet rate (300 second avg) | | /System/intf-items/phys-items/PhysIf-list/dbgIfIn-items/octetRate |
+| Egress octet rate (300 second avg) | | /System/intf-items/phys-items/PhysIf-list/dbgIfOut-items/octetRate |
 | Ingress packets discarded | /interfaces/interface/state/counters/in-discards | |
 | Egress packets discarded | /interfaces/interface/state/counters/out-discards | |
 | Ingress broadcast packets | /interfaces/interface/state/counters/in-broadcast-pkts | |
 | Ingress multicast packets | /interfaces/interface/state/counters/in-multicast-pkts | |
-| Ingress bytes | /interfaces/interface/state/counters/in-octets | |
 | Ingress unicast packets | /interfaces/interface/state/counters/in-unicast-pkts | |
 | Egress broadcast packets | /interfaces/interface/state/counters/out-broadcast-pkts | |
 | Egress multicast packets | /interfaces/interface/state/counters/out-multicast-pkts | |
-| Egress bytes | /interfaces/interface/state/counters/out-octets | |
 | Egress unicast packets | /interfaces/interface/state/counters/out-unicast-pkts | |
 | Ingress errors | /interfaces/interface/state/counters/in-errors | |
 | Interface status | /interfaces/interface/state/oper-status | |
@@ -112,9 +112,11 @@
 | Total CRC align errors | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/cRCAlignErrors |
 | Total collisions | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/collisions |
 | Total drop events | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/dropEvents |
+| Total egress bytes | /interfaces/interface/state/counters/out-octets | /System/intf-items/phys-items/PhysIf-list/dbgIfOut-items/octets |
 | Total fragments | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/fragments |
 | Interface down drop | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/ifdowndrop |
 | Total ignored | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/ignored |
+| Total ingress bytes | /interfaces/interface/state/counters/in-octets | /System/intf-items/phys-items/PhysIf-list/dbgIfIn-items/octets |
 | Total jabbers | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/jabbers |
 | Total multicast packets | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/multicastPkts |
 | Total octets | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/octets |
