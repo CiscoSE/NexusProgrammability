@@ -13,6 +13,12 @@
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 
+## CAM
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+| ACL TCAM | | /System/pltfm-items/mod-items/TcamStatsModule-list/inst-items/TcamStatsInst-list |
+| FIB TCAM | | /System/capacity-items/fibresutil-items |
+
 ## CDP
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
