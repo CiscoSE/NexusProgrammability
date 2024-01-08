@@ -1,6 +1,7 @@
 # Common Sensor Paths
 
 ## ARP
+
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 | Admin state | | /System/arp-items/inst-items/adminSt |
@@ -10,16 +11,19 @@
 | Proxy ARP state | /interfaces/interface/subinterfaces/subinterface/ipv4/proxy-arp/config/mode | |
 
 ## BGP
+
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 
 ## CAM
+
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 | ACL TCAM | | /System/pltfm-items/mod-items/TcamStatsModule-list/inst-items/TcamStatsInst-list |
 | FIB TCAM | | /System/capacity-items/fibresutil-items |
 
 ## CDP
+
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 | All CDP info | | /System/cdp-items/inst-items |
@@ -41,6 +45,7 @@
 | Remote device version | | /System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/ver |
 
 ## CoPP
+
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 | Admin state | | /System/copp-items/adminSt |
@@ -50,6 +55,7 @@
 | Profile | | /System/copp-items/profile-items/prof |
 
 ## gRPC
+
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
 | Listening port | | /System/grpc-items/port |
@@ -58,26 +64,15 @@
 | Minimum sample interval (seconds) | | /System/grpc-items/gnmi-items/minSampleInterval |
 
 ## Interface
+
+### Interface - Common
+
 | Metric      | Openconfig Model | Native Model |
 | :--- | :--- | :--- |
-| Interface counters | 	/interfaces/interface/state/counters | 	/System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items |
 | Admin status | /interfaces/interface/state/admin-status | /System/intf-items/phys-items/PhysIf-list/adminSt |
 | Operational status | /interfaces/interface/state/oper-status | |
 | Interface descriptions | /interfaces/interface/state/description | |
 | Interface names | /interfaces/interface/state/name | |
-| Ingress octet rate (300 second avg) | | /System/intf-items/phys-items/PhysIf-list/dbgIfIn-items/octetRate |
-| Egress octet rate (300 second avg) | | /System/intf-items/phys-items/PhysIf-list/dbgIfOut-items/octetRate |
-| Ingress packets discarded | /interfaces/interface/state/counters/in-discards | |
-| Egress packets discarded | /interfaces/interface/state/counters/out-discards | |
-| Ingress broadcast packets | /interfaces/interface/state/counters/in-broadcast-pkts | |
-| Ingress multicast packets | /interfaces/interface/state/counters/in-multicast-pkts | |
-| Ingress unicast packets | /interfaces/interface/state/counters/in-unicast-pkts | |
-| Egress broadcast packets | /interfaces/interface/state/counters/out-broadcast-pkts | |
-| Egress multicast packets | /interfaces/interface/state/counters/out-multicast-pkts | |
-| Egress unicast packets | /interfaces/interface/state/counters/out-unicast-pkts | |
-| Ingress errors | /interfaces/interface/state/counters/in-errors | |
-| Interface status | /interfaces/interface/state/oper-status | |
-| Egress errors | /interfaces/interface/state/counters/out-errors | |
 | Default layer | | /System/ethpm-items/inst-items/systemDefaultLayer |
 | Default admin state | | /System/ethpm-items/inst-items/systemDefaultAdminSt |
 | System jumbo MTU size (bytes) | | /System/ethpm-items/inst-items/systemJumboMtu |
@@ -93,6 +88,25 @@
 | Auto negotiation status | | /System/intf-items/phys-items/PhysIf-list/autoNeg |
 | Beacon status | | /System/intf-items/phys-items/PhysIf-list/beacon |
 | Bandwidth parameter | | /System/intf-items/phys-items/PhysIf-list/bw |
+
+### Interface - Counters
+
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+| Interface counters | 	/interfaces/interface/state/counters | 	/System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items |
+| Ingress octet rate (300 second avg) | | /System/intf-items/phys-items/PhysIf-list/dbgIfIn-items/octetRate |
+| Egress octet rate (300 second avg) | | /System/intf-items/phys-items/PhysIf-list/dbgIfOut-items/octetRate |
+| Ingress packets discarded | /interfaces/interface/state/counters/in-discards | |
+| Egress packets discarded | /interfaces/interface/state/counters/out-discards | |
+| Ingress broadcast packets | /interfaces/interface/state/counters/in-broadcast-pkts | |
+| Ingress multicast packets | /interfaces/interface/state/counters/in-multicast-pkts | |
+| Ingress unicast packets | /interfaces/interface/state/counters/in-unicast-pkts | |
+| Egress broadcast packets | /interfaces/interface/state/counters/out-broadcast-pkts | |
+| Egress multicast packets | /interfaces/interface/state/counters/out-multicast-pkts | |
+| Egress unicast packets | /interfaces/interface/state/counters/out-unicast-pkts | |
+| Ingress errors | /interfaces/interface/state/counters/in-errors | |
+| Interface status | /interfaces/interface/state/oper-status | |
+| Egress errors | /interfaces/interface/state/counters/out-errors | |
 | Alignment errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/alignmentErrors |
 | Babble count | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/babble |
 | Carrier sense errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/carrierSenseErrors |
@@ -102,7 +116,6 @@
 | FCS errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/fCSErrors |
 | Frame too long count | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/frameTooLongs |
 | Input pause frames | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/inPauseFrames |
-| Input dribble | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/inputdribble |
 | Internal MAC receive errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/internalMacReceiveErrors |
 | Internal MAC transmit errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/internalMacTransmitErrors |
 | Late collisions count | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/lateCollisions |
@@ -111,7 +124,6 @@
 | No carrier errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/noCarrierErrors |
 | Output pause frames | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/outPauseFrames |
 | Runts | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/runts |
-| SQET test errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/sQETTestErrors |
 | Single collision frames | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/singleCollisionFrames |
 | Symbol errors | | /System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/symbolErrors |
 | Total Broadcast packets | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/broadcastPkts |
@@ -128,6 +140,11 @@
 | Total octets | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/octets |
 | Total Overrun | | /System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/overrun |
 
+### Interface - Optical
+
+| Metric      | Openconfig Model | Native Model |
+| :--- | :--- | :--- |
+| Transceiver Sensor(list) | `N/A` | `System/intf-items/phys-items/PhysIf-list/phys-items/fcot-items/lane-items` |
 
 ## ISIS
 | Metric      | Openconfig Model | Native Model |
