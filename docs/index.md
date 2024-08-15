@@ -13,8 +13,8 @@ NX-OS software running on Cisco Nexus 9000 Series switches is:
 * Scalable - Accommodates and grows with the business and its requirements
 * Easy to Use - Reduces the amount of learning required, simplifies deployment, and provides ease of manageability
 
-The Nexus 9000 homepage can be found below:
+The Nexus 9000 homepage can be found at: [Cisco Nexus 9000 Series Switches](https://www.cisco.com/site/us/en/products/networking/cloud-networking-switches/nexus-9000-switches/index.html)
 
-[Cisco Nexus 9000 Series Switches](https://www.cisco.com/site/us/en/products/networking/cloud-networking-switches/nexus-9000-switches/index.html)
+Detailed programmability guides for each NX-OS release can be found at: [NX-OS Programmability Guides](https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-programming-reference-guides-list.html)
 
 Please select one of the categories on the left side to learn about that programmability topic.
