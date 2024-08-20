@@ -1,7 +1,7 @@
-# gNMI Overview
+# Dial-In gNMI Overview
 
 ## About gRPC
-gNMI is built on top of Google Remote Procedure Call (gRPC). gRPC is an open source high performance RPC framework released in 2016. It uses HTTP/2 for transport, protocol buffers for the interface description language, and includes the following features:
+Google Remote Procedure Call (gRPC) is an open source high performance RPC framework released in 2016. gRPC has many RPCs available to control systems. It uses HTTP/2 for transport, protocol buffers for the interface description language, and includes the following features:
 
 * Authentication
 * Bi-directional streaming
@@ -14,30 +14,18 @@ gNMI is built on top of Google Remote Procedure Call (gRPC). gRPC is an open sou
 gRPC can generate cross-platform client and server bindings for many languages. It also supports TLS and token-based authentication. gRPC uses protocol buffers to encode data.
 
 ## About gNMI
-gRPC Network Management Interface (gNMI) is a specification of RPCs for managing or collecting the state of a device. The content provided through gNMI can be modeled using YANG. gRPC carries gNMI and provides the ability to create and transmit requests.
+gRPC Network Management Interface (gNMI) is a specific set of RPCs built on top of gRPC. It can be used for programming a remote device, or collecting information from a remote device. The content provided through gNMI can be modeled using YANG. gRPC carries gNMI and provides the ability to create and transmit requests.
 
 ## NX-OS gNMI Features
-gNMI can be transmitted in two ways:
-
-* Dial-In
-    * In this mode, the client will initiate the connection to the switch.
-* Dial-Out
-    * In this mode, the switch will initiate the connection to the client.
-
 NX-OS supports the following gNMI RPCs:
 
-* Get
-* Set
-* Subscribe
-* Capabilities
+* Get - Collect telemetry data from a device one time.
+* Set - Modify the configuration of a device.
+* Subscribe - Subscribe to an indefinite stream of telemetry data from a device.
+* Capabilities - Collect the gNMI capabilities supported on a device.
 
 ## gNMI Subscription
-gNMI subscription can be used with both dial-in or dial-out methods.
-
-* For dial-in subscriptions, the client has the configuration of what it would like from the switch. It will connect to the switch and pull the information listed in the client subscription configuration.
-* For dial-out subscriptions, the switch has the configuration of what to provide to the client. It will connect to the client and send the information listed in the switch subscription configuration.
-
-Starting in NX-OS 9.3.1, Nexus switches support the following subscription features:
+The most commonly used gNMI RPC is the subscribe RPC. Starting in NX-OS 9.3.1, Nexus switches support the following gNMI subscription features:
 
 * Once
     * Collect current values only once.
@@ -48,4 +36,4 @@ Starting in NX-OS 9.3.1, Nexus switches support the following subscription featu
 * Stream - On_Change
     * Collect current values immediately. After this initial collection, only collect values when there is a change.
 * Stream - Target_Defined
-    * This allows the target to define the best type of subscription to use.
+    * This allows the switch to select the best type of subscription to use (either sample or on_change).
