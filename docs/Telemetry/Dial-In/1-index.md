@@ -1,4 +1,4 @@
-# Dial-In gNMI Overview
+# Dial-In Overview
 
 ## Dial-In Overview
 Dial-in telemetry uses model-driven methods to collect telemetry from a Cisco Nexus device. The term "dial-in" means the external collector is "dialing-in" to the Nexus device and telling the switch what to do. This process happens in two steps. The first step is for the external collector to connect to the Nexus device and tell the switch which telemetry data to collect. The second step is for the Nexus device to collect this data and send it to the external collector.
