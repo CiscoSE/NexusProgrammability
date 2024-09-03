@@ -185,6 +185,7 @@
 | Last reset OS version | | /System/showversion-items/lastResetSysVersion |
 | Last reset time | | /System/showversion-items/lastResetTime |
 | System alarms | /system/alarms | /System/alarms-items/alarm-items/Alarm-list |
+| System Logging | /syslog/messages | |
 | Running config != startup config | | /System/configDirty |
 
 ### Platform - Boot
