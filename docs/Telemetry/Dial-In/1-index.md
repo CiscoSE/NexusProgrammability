@@ -1,9 +1,27 @@
 # Dial-In Overview
 
 ## About Dial-In Telemetry
-Dial-in telemetry uses model-driven methods to collect telemetry from a Cisco Nexus device. The term "dial-in" means the external collector is "dialing-in" to the Nexus device and telling the switch what to do. This process happens in two steps. The first step is for the external collector to connect to the Nexus device and tell the switch which telemetry data to collect. The second step is for the Nexus device to collect this data and send it to the external collector.
+Dial-in telemetry uses model-driven methods to collect telemetry from a Cisco Nexus device. The term "dial-in" means the external collector is "dialing-in" to the Nexus device and telling the switch what to send. This process happens in two steps. The first step is for the external collector to connect to the Nexus device and tell the switch which telemetry data to collect. The second step is for the Nexus device to send this data to the external collector.
 
 Dial-in telemetry has multiple methods available for the data structure, encoding, and transport.
+
+## Dial-In Telemetry Features
+Supports the following data structure types:
+
+* DME
+* Cisco Native YANG
+* OpenConfig YANG
+
+Supports the following encoding types:
+
+* JSON
+* GPB Compact
+* GPB Key-Value
+
+Supports the following transport types:
+
+* HTTP
+* gRPC
 
 ## About gRPC
 Google Remote Procedure Call (gRPC) is an open source high performance RPC framework released in 2016. gRPC has many RPCs available to control systems. It uses HTTP/2 for transport, protocol buffers for the interface description language, and includes the following features:
