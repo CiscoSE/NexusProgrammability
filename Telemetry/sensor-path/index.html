@@ -1,0 +1,2889 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../yangsuite/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Common Sensor Paths - Cisco NX-OS Programmability</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#common-sensor-paths" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Cisco NX-OS Programmability" class="md-header__button md-logo" aria-label="Cisco NX-OS Programmability" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Cisco NX-OS Programmability
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Common Sensor Paths
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="blue"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="yellow"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 2c-1.05 0-2.05.16-3 .46 4.06 1.27 7 5.04 7 9.54s-2.94 8.27-7 9.54c.95.3 1.95.46 3 .46a10 10 0 0 0 10-10A10 10 0 0 0 9 2"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/CiscoSE/NexusProgrammability" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    CiscoSE/NexusProgrammability
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Cisco NX-OS Programmability" class="md-nav__button md-logo" aria-label="Cisco NX-OS Programmability" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Cisco NX-OS Programmability
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/CiscoSE/NexusProgrammability" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    CiscoSE/NexusProgrammability
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Telemetry
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Telemetry
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Common Sensor Paths
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Common Sensor Paths
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arp" class="md-nav__link">
+    <span class="md-ellipsis">
+      ARP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bgp" class="md-nav__link">
+    <span class="md-ellipsis">
+      BGP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cam" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      CDP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copp" class="md-nav__link">
+    <span class="md-ellipsis">
+      CoPP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      gRPC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-common" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface - Common
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-counters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface - Counters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-optical" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface - Optical
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isis" class="md-nav__link">
+    <span class="md-ellipsis">
+      ISIS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lacp" class="md-nav__link">
+    <span class="md-ellipsis">
+      LACP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lldp" class="md-nav__link">
+    <span class="md-ellipsis">
+      LLDP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ospf" class="md-nav__link">
+    <span class="md-ellipsis">
+      OSPF
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#platform-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform - Boot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-power-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform - Power Supply
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform - Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-fans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform - Fans
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-chassis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform - Chassis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qos" class="md-nav__link">
+    <span class="md-ellipsis">
+      QOS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qos-input-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      QOS - Input Queue
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qos-output-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      QOS - Output Queue
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Hardware
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLAN
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yangsuite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    YANG Suite
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dial In
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Dial In
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dial-In/1-index/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dial-In Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dial-In/2-configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    gNMI Device Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dial-In/3-certificate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Certificate requirements for secure connections
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dial-In/4-gnmic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use gNMIc with NX-OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dial Out
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Dial Out
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dial-Out/1-index/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dial-Out Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dial-Out/2-configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dial-Out/telegraf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use telegraf with NX-OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arp" class="md-nav__link">
+    <span class="md-ellipsis">
+      ARP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bgp" class="md-nav__link">
+    <span class="md-ellipsis">
+      BGP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cam" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      CDP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copp" class="md-nav__link">
+    <span class="md-ellipsis">
+      CoPP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      gRPC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-common" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface - Common
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-counters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface - Counters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-optical" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface - Optical
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isis" class="md-nav__link">
+    <span class="md-ellipsis">
+      ISIS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lacp" class="md-nav__link">
+    <span class="md-ellipsis">
+      LACP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lldp" class="md-nav__link">
+    <span class="md-ellipsis">
+      LLDP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ospf" class="md-nav__link">
+    <span class="md-ellipsis">
+      OSPF
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#platform-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform - Boot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-power-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform - Power Supply
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform - Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-fans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform - Fans
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-chassis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform - Chassis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qos" class="md-nav__link">
+    <span class="md-ellipsis">
+      QOS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qos-input-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      QOS - Input Queue
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qos-output-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      QOS - Output Queue
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Hardware
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLAN
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="common-sensor-paths">Common Sensor Paths<a class="headerlink" href="#common-sensor-paths" title="Permanent link">&para;</a></h1>
+<h2 id="arp">ARP<a class="headerlink" href="#arp" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Admin state</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/arp-items/inst-items/adminSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Operational state</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/arp-items/operSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Allow ARP outside subnet</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/arp-items/inst-items/allowStaticArpOutsideSubnet</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cache limit</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/arp-items/inst-items/cacheLimit</td>
+</tr>
+<tr>
+<td style="text-align: left;">Proxy ARP state</td>
+<td style="text-align: left;">/interfaces/interface/subinterfaces/subinterface/ipv4/proxy-arp/config/mode</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="bgp">BGP<a class="headerlink" href="#bgp" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="cam">CAM<a class="headerlink" href="#cam" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ACL TCAM</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/pltfm-items/mod-items/TcamStatsModule-list/inst-items/TcamStatsInst-list</td>
+</tr>
+<tr>
+<td style="text-align: left;">FIB TCAM</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/capacity-items/fibresutil-items</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cdp">CDP<a class="headerlink" href="#cdp" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">All CDP info</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/cdp-items/inst-items</td>
+</tr>
+<tr>
+<td style="text-align: left;">CDP status</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/cdp-items/inst-items/adminSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Holdtime</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/cdp-items/inst-items/holdIntvl</td>
+</tr>
+<tr>
+<td style="text-align: left;">Interface admin state</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/cdp-items/inst-items/if-items/If-list/adminSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Interface ID</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/cdp-items/inst-items/if-items/If-list/id</td>
+</tr>
+<tr>
+<td style="text-align: left;">Interface VLAN</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/cdp-items/inst-items/if-items/If-list/nativeVlan</td>
+</tr>
+<tr>
+<td style="text-align: left;">Interface status</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/cdp-items/inst-items/if-items/If-list/operSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Port local MAC</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/localMAC</td>
+</tr>
+<tr>
+<td style="text-align: left;">Port MTU</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/mtu</td>
+</tr>
+<tr>
+<td style="text-align: left;">Neighbor capabilities</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/cap</td>
+</tr>
+<tr>
+<td style="text-align: left;">Remote platform type</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/platId</td>
+</tr>
+<tr>
+<td style="text-align: left;">Remote interface</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/portId</td>
+</tr>
+<tr>
+<td style="text-align: left;">Remote MAC</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/remoteMAC</td>
+</tr>
+<tr>
+<td style="text-align: left;">Remote IP</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/intf-items/IntfAddr-list/addr</td>
+</tr>
+<tr>
+<td style="text-align: left;">Remote management IP</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/mgmt-items/MgmtAddr-list/addr</td>
+</tr>
+<tr>
+<td style="text-align: left;">Remote device name</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/sysName</td>
+</tr>
+<tr>
+<td style="text-align: left;">Remote device version</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/cdp-items/inst-items/if-items/If-list/adj-items/AdjEp-list/ver</td>
+</tr>
+</tbody>
+</table>
+<h2 id="copp">CoPP<a class="headerlink" href="#copp" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Admin state</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/copp-items/adminSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Operational state</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/copp-items/operSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Class rate limiter state</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/copp-items/enableFlag</td>
+</tr>
+<tr>
+<td style="text-align: left;">Error code</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/copp-items/error</td>
+</tr>
+<tr>
+<td style="text-align: left;">Profile</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/copp-items/profile-items/prof</td>
+</tr>
+</tbody>
+</table>
+<h2 id="grpc">gRPC<a class="headerlink" href="#grpc" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Listening port</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/grpc-items/port</td>
+</tr>
+<tr>
+<td style="text-align: left;">Keepalive timeout</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/grpc-items/gnmi-items/keepAliveTimeout</td>
+</tr>
+<tr>
+<td style="text-align: left;">Max calls allowed</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/grpc-items/gnmi-items/maxCalls</td>
+</tr>
+<tr>
+<td style="text-align: left;">Minimum sample interval (seconds)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/grpc-items/gnmi-items/minSampleInterval</td>
+</tr>
+</tbody>
+</table>
+<h2 id="interface">Interface<a class="headerlink" href="#interface" title="Permanent link">&para;</a></h2>
+<h3 id="interface-common">Interface - Common<a class="headerlink" href="#interface-common" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Admin status</td>
+<td style="text-align: left;">/interfaces/interface/state/admin-status</td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/adminSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Operational status</td>
+<td style="text-align: left;">/interfaces/interface/state/oper-status</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Interface descriptions</td>
+<td style="text-align: left;">/interfaces/interface/state/description</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Interface names</td>
+<td style="text-align: left;">/interfaces/interface/state/name</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Default layer</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ethpm-items/inst-items/systemDefaultLayer</td>
+</tr>
+<tr>
+<td style="text-align: left;">Default admin state</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ethpm-items/inst-items/systemDefaultAdminSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">System jumbo MTU size (bytes)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ethpm-items/inst-items/systemJumboMtu</td>
+</tr>
+<tr>
+<td style="text-align: left;">FEC Mode</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/FECMode</td>
+</tr>
+<tr>
+<td style="text-align: left;">Access VLAN</td>
+<td style="text-align: left;">/interfaces/interface/ethernet/switched-vlan/state/access-vlan/</td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/accessVlan</td>
+</tr>
+<tr>
+<td style="text-align: left;">Bundle port number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/bdlPortNum</td>
+</tr>
+<tr>
+<td style="text-align: left;">Port channel state</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/channelingSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Member port flags</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/flags</td>
+</tr>
+<tr>
+<td style="text-align: left;">LTL programmed</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/ltlProgrammed</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aggregation operational state</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/operSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Summarized operational state</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/summOperSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aggregation member uptime</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/aggrmbrif-items/uptime</td>
+</tr>
+<tr>
+<td style="text-align: left;">Auto negotiation status</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/autoNeg</td>
+</tr>
+<tr>
+<td style="text-align: left;">Beacon status</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/beacon</td>
+</tr>
+<tr>
+<td style="text-align: left;">Bandwidth parameter</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/bw</td>
+</tr>
+</tbody>
+</table>
+<h3 id="interface-counters">Interface - Counters<a class="headerlink" href="#interface-counters" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Interface counters</td>
+<td style="text-align: left;">/interfaces/interface/state/counters</td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ingress octet rate (300 second avg)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgIfIn-items/octetRate</td>
+</tr>
+<tr>
+<td style="text-align: left;">Egress octet rate (300 second avg)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgIfOut-items/octetRate</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ingress packets discarded</td>
+<td style="text-align: left;">/interfaces/interface/state/counters/in-discards</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Egress packets discarded</td>
+<td style="text-align: left;">/interfaces/interface/state/counters/out-discards</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Ingress broadcast packets</td>
+<td style="text-align: left;">/interfaces/interface/state/counters/in-broadcast-pkts</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Ingress multicast packets</td>
+<td style="text-align: left;">/interfaces/interface/state/counters/in-multicast-pkts</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Ingress unicast packets</td>
+<td style="text-align: left;">/interfaces/interface/state/counters/in-unicast-pkts</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Egress broadcast packets</td>
+<td style="text-align: left;">/interfaces/interface/state/counters/out-broadcast-pkts</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Egress multicast packets</td>
+<td style="text-align: left;">/interfaces/interface/state/counters/out-multicast-pkts</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Egress unicast packets</td>
+<td style="text-align: left;">/interfaces/interface/state/counters/out-unicast-pkts</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Ingress errors</td>
+<td style="text-align: left;">/interfaces/interface/state/counters/in-errors</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Interface status</td>
+<td style="text-align: left;">/interfaces/interface/state/oper-status</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Egress errors</td>
+<td style="text-align: left;">/interfaces/interface/state/counters/out-errors</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Alignment errors</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/alignmentErrors</td>
+</tr>
+<tr>
+<td style="text-align: left;">Babble count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/babble</td>
+</tr>
+<tr>
+<td style="text-align: left;">Carrier sense errors</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/carrierSenseErrors</td>
+</tr>
+<tr>
+<td style="text-align: left;">Control input unknown OP codes</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/controlInUnknownOpcodes</td>
+</tr>
+<tr>
+<td style="text-align: left;">Deferred transmissions</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/deferredTransmissions</td>
+</tr>
+<tr>
+<td style="text-align: left;">Excessive collisions</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/excessiveCollisions</td>
+</tr>
+<tr>
+<td style="text-align: left;">FCS errors</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/fCSErrors</td>
+</tr>
+<tr>
+<td style="text-align: left;">Frame too long count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/frameTooLongs</td>
+</tr>
+<tr>
+<td style="text-align: left;">Input pause frames</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/inPauseFrames</td>
+</tr>
+<tr>
+<td style="text-align: left;">Internal MAC receive errors</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/internalMacReceiveErrors</td>
+</tr>
+<tr>
+<td style="text-align: left;">Internal MAC transmit errors</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/internalMacTransmitErrors</td>
+</tr>
+<tr>
+<td style="text-align: left;">Late collisions count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/lateCollisions</td>
+</tr>
+<tr>
+<td style="text-align: left;">Lost carrier errors</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/lostCarrierErrors</td>
+</tr>
+<tr>
+<td style="text-align: left;">Multiple collision frames</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/multipleCollisionFrames</td>
+</tr>
+<tr>
+<td style="text-align: left;">No carrier errors</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/noCarrierErrors</td>
+</tr>
+<tr>
+<td style="text-align: left;">Output pause frames</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/outPauseFrames</td>
+</tr>
+<tr>
+<td style="text-align: left;">Runts</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/runts</td>
+</tr>
+<tr>
+<td style="text-align: left;">Single collision frames</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/singleCollisionFrames</td>
+</tr>
+<tr>
+<td style="text-align: left;">Symbol errors</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgDot3Stats-items/symbolErrors</td>
+</tr>
+<tr>
+<td style="text-align: left;">Total Broadcast packets</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/broadcastPkts</td>
+</tr>
+<tr>
+<td style="text-align: left;">Total CRC align errors</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/cRCAlignErrors</td>
+</tr>
+<tr>
+<td style="text-align: left;">Total collisions</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/collisions</td>
+</tr>
+<tr>
+<td style="text-align: left;">Total drop events</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/dropEvents</td>
+</tr>
+<tr>
+<td style="text-align: left;">Total egress bytes</td>
+<td style="text-align: left;">/interfaces/interface/state/counters/out-octets</td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgIfOut-items/octets</td>
+</tr>
+<tr>
+<td style="text-align: left;">Total fragments</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/fragments</td>
+</tr>
+<tr>
+<td style="text-align: left;">Interface down drop</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/ifdowndrop</td>
+</tr>
+<tr>
+<td style="text-align: left;">Total ignored</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/ignored</td>
+</tr>
+<tr>
+<td style="text-align: left;">Total ingress bytes</td>
+<td style="text-align: left;">/interfaces/interface/state/counters/in-octets</td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgIfIn-items/octets</td>
+</tr>
+<tr>
+<td style="text-align: left;">Total jabbers</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/jabbers</td>
+</tr>
+<tr>
+<td style="text-align: left;">Total multicast packets</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/multicastPkts</td>
+</tr>
+<tr>
+<td style="text-align: left;">Total octets</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/octets</td>
+</tr>
+<tr>
+<td style="text-align: left;">Total Overrun</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/intf-items/phys-items/PhysIf-list/dbgEtherStats-items/overrun</td>
+</tr>
+</tbody>
+</table>
+<h3 id="interface-optical">Interface - Optical<a class="headerlink" href="#interface-optical" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Transceiver Sensor(list)</td>
+<td style="text-align: left;"><code>N/A</code></td>
+<td style="text-align: left;"><code>System/intf-items/phys-items/PhysIf-list/phys-items/fcot-items/lane-items</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="isis">ISIS<a class="headerlink" href="#isis" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="lacp">LACP<a class="headerlink" href="#lacp" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="lldp">LLDP<a class="headerlink" href="#lldp" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">All LLDP information</td>
+<td style="text-align: left;">/lldp/interfaces/interface</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">LLDP neighbor ID type</td>
+<td style="text-align: left;">/lldp/interfaces/interface/neighbors/neighbor/state/chassis-id-type</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">LLDP chassis ID</td>
+<td style="text-align: left;">/lldp/interfaces/interface/neighbors/neighbor/state/chassis-id</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Port ID type</td>
+<td style="text-align: left;">/lldp/interfaces/interface/neighbors/neighbor/state/port-id-type</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Neighbor port ID</td>
+<td style="text-align: left;">/lldp/interfaces/interface/neighbors/neighbor/state/port-id</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">State status and type</td>
+<td style="text-align: left;">/lldp/interfaces/interface/neighbors/neighbor/capabilities/capability/state</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">State status</td>
+<td style="text-align: left;">/lldp/interfaces/interface/neighbors/neighbor/capabilities/capability/state/enabled</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ospf">OSPF<a class="headerlink" href="#ospf" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="platform">Platform<a class="headerlink" href="#platform" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Hostname</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/name</td>
+</tr>
+<tr>
+<td style="text-align: left;">System Serial number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/serial</td>
+</tr>
+<tr>
+<td style="text-align: left;">System copyright</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/showversion-items/copyRight</td>
+</tr>
+<tr>
+<td style="text-align: left;">BIOS version</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/showversion-items/biosVersion</td>
+</tr>
+<tr>
+<td style="text-align: left;">BIOS date</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/showversion-items/biosCompileTime</td>
+</tr>
+<tr>
+<td style="text-align: left;">NX-OS version</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/showversion-items/nxosVersion</td>
+</tr>
+<tr>
+<td style="text-align: left;">NX-OS date</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/showversion-items/nxosCompileTime</td>
+</tr>
+<tr>
+<td style="text-align: left;">NX-OS image filename</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/showversion-items/nxosImageFile</td>
+</tr>
+<tr>
+<td style="text-align: left;">Kernel uptime</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/showversion-items/kernelUptime</td>
+</tr>
+<tr>
+<td style="text-align: left;">Last reset reason</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/showversion-items/lastResetReason</td>
+</tr>
+<tr>
+<td style="text-align: left;">Last reset OS version</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/showversion-items/lastResetSysVersion</td>
+</tr>
+<tr>
+<td style="text-align: left;">Last reset time</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/showversion-items/lastResetTime</td>
+</tr>
+<tr>
+<td style="text-align: left;">System alarms</td>
+<td style="text-align: left;">/system/alarms</td>
+<td style="text-align: left;">/System/alarms-items/alarm-items/Alarm-list</td>
+</tr>
+<tr>
+<td style="text-align: left;">System Logging</td>
+<td style="text-align: left;">/syslog/messages</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Running config != startup config</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/configDirty</td>
+</tr>
+</tbody>
+</table>
+<h3 id="platform-boot">Platform - Boot<a class="headerlink" href="#platform-boot" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Auto copy status</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/boot-items/autoCopy</td>
+</tr>
+<tr>
+<td style="text-align: left;">Exclude configuration status</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/boot-items/excludeCfg</td>
+</tr>
+<tr>
+<td style="text-align: left;">Boot success status</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/boot-items/image-items/image_err</td>
+</tr>
+<tr>
+<td style="text-align: left;">Image verification</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/boot-items/image-items/imageverification</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor 1 image</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/boot-items/image-items/sup1</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor 2 image</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/boot-items/image-items/sup2</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor 1 reload image</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/boot-items/image-items/sup1NextReload</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor 2 reload image</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/boot-items/image-items/sup2NextReload</td>
+</tr>
+<tr>
+<td style="text-align: left;">POAP state</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/boot-items/poap</td>
+</tr>
+</tbody>
+</table>
+<h3 id="platform-power-supply">Platform - Power Supply<a class="headerlink" href="#platform-power-supply" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">PSU slot ID number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/id</td>
+</tr>
+<tr>
+<td style="text-align: left;">PSU slot physical ID number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/physId</td>
+</tr>
+<tr>
+<td style="text-align: left;">PSU ID number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/id</td>
+</tr>
+<tr>
+<td style="text-align: left;">Serial</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/ser</td>
+</tr>
+<tr>
+<td style="text-align: left;">PSU slot description</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/descr</td>
+</tr>
+<tr>
+<td style="text-align: left;">PSU description</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/descr</td>
+</tr>
+<tr>
+<td style="text-align: left;">Slot type</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/type</td>
+</tr>
+<tr>
+<td style="text-align: left;">Presence</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/operSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Location</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/loc</td>
+</tr>
+<tr>
+<td style="text-align: left;">State</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/operSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Vendor</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/vendor</td>
+</tr>
+<tr>
+<td style="text-align: left;">Model</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/model</td>
+</tr>
+<tr>
+<td style="text-align: left;">Revision</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/rev</td>
+</tr>
+<tr>
+<td style="text-align: left;">Software alarm state</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/softwareAlarm</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hardware alarm state</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/hardwareAlarm</td>
+</tr>
+<tr>
+<td style="text-align: left;">Power cord presence</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/typeCordConnected</td>
+</tr>
+<tr>
+<td style="text-align: left;">Amps input (actual)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/inputCurr</td>
+</tr>
+<tr>
+<td style="text-align: left;">Amps input</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/iIn</td>
+</tr>
+<tr>
+<td style="text-align: left;">Amps output (actual)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/drawnCurr</td>
+</tr>
+<tr>
+<td style="text-align: left;">Amps output</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/iOut</td>
+</tr>
+<tr>
+<td style="text-align: left;">Volts source</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/vSrc</td>
+</tr>
+<tr>
+<td style="text-align: left;">Volts input</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/vIn</td>
+</tr>
+<tr>
+<td style="text-align: left;">Volts output</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/vOut</td>
+</tr>
+<tr>
+<td style="text-align: left;">Volts PSU</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/volt</td>
+</tr>
+<tr>
+<td style="text-align: left;">VDR ID</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/vdrId</td>
+</tr>
+<tr>
+<td style="text-align: left;">Watts input</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/pIn</td>
+</tr>
+<tr>
+<td style="text-align: left;">Watts output</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/pOut</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fan state</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/fanOpSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fan direction</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/psuslot-items/PsuSlot-list/psu-items/fanDirection</td>
+</tr>
+</tbody>
+</table>
+<h3 id="platform-storage">Platform - Storage<a class="headerlink" href="#platform-storage" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Drive ID</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/id</td>
+</tr>
+<tr>
+<td style="text-align: left;">Description</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/descr</td>
+</tr>
+<tr>
+<td style="text-align: left;">Drive type</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/type</td>
+</tr>
+<tr>
+<td style="text-align: left;">Vendor</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/vendor</td>
+</tr>
+<tr>
+<td style="text-align: left;">Model</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/model</td>
+</tr>
+<tr>
+<td style="text-align: left;">Revision</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/rev</td>
+</tr>
+<tr>
+<td style="text-align: left;">Serial</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/ser</td>
+</tr>
+<tr>
+<td style="text-align: left;">Access type</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/acc</td>
+</tr>
+<tr>
+<td style="text-align: left;">Lifetime percent used</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/lifetime</td>
+</tr>
+<tr>
+<td style="text-align: left;">Manufacturing time</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/mfgTm</td>
+</tr>
+<tr>
+<td style="text-align: left;">Drive status</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/operSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Minor alarm count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/minorAlarm</td>
+</tr>
+<tr>
+<td style="text-align: left;">Major alarm count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/majorAlarm</td>
+</tr>
+<tr>
+<td style="text-align: left;">Terabytes written</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/tbw</td>
+</tr>
+<tr>
+<td style="text-align: left;">Bad blocks</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/gbb</td>
+</tr>
+<tr>
+<td style="text-align: left;">Drive warning count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/warning</td>
+</tr>
+<tr>
+<td style="text-align: left;">Read error rate</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/readErrorRate</td>
+</tr>
+<tr>
+<td style="text-align: left;">P/E Cycles</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/flash-items/peCycle</td>
+</tr>
+</tbody>
+</table>
+<h3 id="platform-fans">Platform - Fans<a class="headerlink" href="#platform-fans" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Fan module ID</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/pie-items/env-items/fan-items/fan_env_info-items/fan_env_record-items/FanEnvRecord-list/fanId</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fan ID within module</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/pie-items/env-items/fan-items/fan_env_info-items/fan_env_record-items/FanEnvRecord-list/fan_params-items/FanParams-list/trayInst</td>
+</tr>
+<tr>
+<td style="text-align: left;">Description</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/ftslot-items/FtSlot-list/ft-items/fan-items/Fan-list/descr</td>
+</tr>
+<tr>
+<td style="text-align: left;">Presence</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/pie-items/env-items/fan-items/fan_env_info-items/fan_env_record-items/FanEnvRecord-list/fanPresent</td>
+</tr>
+<tr>
+<td style="text-align: left;">Direction</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/ftslot-items/FtSlot-list/ft-items/fan-items/Fan-list/dir</td>
+</tr>
+<tr>
+<td style="text-align: left;">Status</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/ftslot-items/FtSlot-list/ft-items/fan-items/Fan-list/operSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Vendor</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/ftslot-items/FtSlot-list/ft-items/fan-items/Fan-list/vendor</td>
+</tr>
+<tr>
+<td style="text-align: left;">Model</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/pie-items/env-items/fan-items/fan_env_info-items/fan_env_record-items/FanEnvRecord-list/fanProdId</td>
+</tr>
+<tr>
+<td style="text-align: left;">RPM</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/pie-items/env-items/fan-items/fan_env_info-items/fan_env_record-items/FanEnvRecord-list/fan_params-items/FanParams-list/fanRpm</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fan speed (percent)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/pie-items/env-items/fan-items/fan_env_info-items/fan_env_record-items/FanEnvRecord-list/fan_params-items/FanParams-list/fanSpeed</td>
+</tr>
+<tr>
+<td style="text-align: left;">Max RPM</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/pie-items/env-items/fan-items/fan_env_info-items/fan_env_record-items/FanEnvRecord-list/fan_params-items/FanParams-list/maxRpm</td>
+</tr>
+</tbody>
+</table>
+<h3 id="platform-chassis">Platform - Chassis<a class="headerlink" href="#platform-chassis" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Chassis description</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/descr</td>
+</tr>
+<tr>
+<td style="text-align: left;">All line cards</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/lcslot-items/LCSlot-list</td>
+</tr>
+<tr>
+<td style="text-align: left;">Line card ID</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/lcslot-items/LCSlot-list/lc-items/id</td>
+</tr>
+<tr>
+<td style="text-align: left;">Line card description</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/lcslot-items/LCSlot-list/lc-items/descr</td>
+</tr>
+<tr>
+<td style="text-align: left;">Line card model</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/lcslot-items/LCSlot-list/lc-items/model</td>
+</tr>
+<tr>
+<td style="text-align: left;">Line card serial number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/lcslot-items/LCSlot-list/lc-items/ser</td>
+</tr>
+<tr>
+<td style="text-align: left;">Line card hardware version</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/lcslot-items/LCSlot-list/lc-items/hwVer</td>
+</tr>
+<tr>
+<td style="text-align: left;">Line card revision</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/lcslot-items/LCSlot-list/lc-items/rev</td>
+</tr>
+<tr>
+<td style="text-align: left;">Line card breakout factor</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/lcslot-items/LCSlot-list/lc-items/breakoutFactor</td>
+</tr>
+<tr>
+<td style="text-align: left;">Line card MAC</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/lcslot-items/LCSlot-list/lc-items/macB</td>
+</tr>
+<tr>
+<td style="text-align: left;">Line card MAC end</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/lcslot-items/LCSlot-list/lc-items/macE</td>
+</tr>
+<tr>
+<td style="text-align: left;">Line card number of ports</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/lcslot-items/LCSlot-list/lc-items/numP</td>
+</tr>
+<tr>
+<td style="text-align: left;">Line card operational state</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/lcslot-items/LCSlot-list/lc-items/operSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Line card part number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/lcslot-items/LCSlot-list/lc-items/partNumber</td>
+</tr>
+<tr>
+<td style="text-align: left;">Line card power state</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/lcslot-items/LCSlot-list/lc-items/pwrSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Line card physical presence</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/lcslot-items/LCSlot-list/operSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor ID</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/id</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor location</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/loc</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor slot description</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/descr</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor physical presence</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/operSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor power status</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/poweroff</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor CPU ID</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/cpu-items/CPU-list/id</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor CPU vendor</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/cpu-items/CPU-list/vendor</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor CPU model</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/cpu-items/CPU-list/model</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor CPU architecture</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/cpu-items/CPU-list/arch</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor CPU speed (GHz)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/cpu-items/CPU-list/speed</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor CPU cores</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/cpu-items/CPU-list/cores</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor CPU cores enabled</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/cpu-items/CPU-list/coresEn</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor CPU threads</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/cpu-items/CPU-list/thrds</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor RAM DIMM ID</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/dimm-items/Dimm-list/id</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor RAM total</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/dimm-items/Dimm-list/cap</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor RAM used</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/dimm-items/Dimm-list/used</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor temp sensors</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/sensor-items/Sensor-list</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor temp sensor ID</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/sensor-items/Sensor-list/id</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor temp sensor type</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/sensor-items/Sensor-list/type</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor temp sensor major threshold</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/sensor-items/Sensor-list/majorThresh</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor temp sensor minor threshold</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/sensor-items/Sensor-list/minorThresh</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor temp sensor status</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/sensor-items/Sensor-list/operSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor temp sensor current temp</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/sensor-items/Sensor-list/tempValue</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supervisor temp sensor temp unit</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ch-items/supslot-items/SupCSlot-list/sup-items/sensor-items/Sensor-list/unit</td>
+</tr>
+</tbody>
+</table>
+<h2 id="qos">QOS<a class="headerlink" href="#qos" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">All QOS info</td>
+<td style="text-align: left;">/oc-qos:qos</td>
+<td style="text-align: left;">/System/ipqos-items</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dynamic buffer share</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/dynamicBufferShare</td>
+</tr>
+</tbody>
+</table>
+<h3 id="qos-input-queue">QOS - Input Queue<a class="headerlink" href="#qos-input-queue" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Input queue name</td>
+<td style="text-align: left;">/oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:input/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:name</td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/in-items/intf-items/If-list/queCmap-items/QueuingStats-list/cmapName</td>
+</tr>
+<tr>
+<td style="text-align: left;">Input queue dropped packets</td>
+<td style="text-align: left;">/oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:input/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:dropped-pkts</td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/in-items/intf-items/If-list/queCmap-items/QueuingStats-list/dropPackets</td>
+</tr>
+</tbody>
+</table>
+<h3 id="qos-output-queue">QOS - Output Queue<a class="headerlink" href="#qos-output-queue" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Interface ID</td>
+<td style="text-align: left;">/oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:interface-id</td>
+<td style="text-align: left;">Interface ID /System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/name</td>
+</tr>
+<tr>
+<td style="text-align: left;">All stats</td>
+<td style="text-align: left;">/oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state</td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list</td>
+</tr>
+<tr>
+<td style="text-align: left;">Class map name</td>
+<td style="text-align: left;">/oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:name</td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/cmapName</td>
+</tr>
+<tr>
+<td style="text-align: left;">Policy map name</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/pmapName</td>
+</tr>
+<tr>
+<td style="text-align: left;">Current queue depth (bytes)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/currQueueDepth</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dropped byte count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/dropBytes</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dropped packets</td>
+<td style="text-align: left;">/oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:dropped-pkts</td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/dropPackets</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ingress queue depth</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/ingQDepthBytes</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ingress queue dropped packet count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/ingQDropPackets</td>
+</tr>
+<tr>
+<td style="text-align: left;">Transmit octets</td>
+<td style="text-align: left;">/oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:transmit-octets</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Transmit packets</td>
+<td style="text-align: left;">/oc-qos:qos/oc-qos:interfaces/oc-qos:interface/oc-qos:output/oc-qos:queues/oc-qos:queue/oc-qos:state/oc-qos:transmit-pkts</td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/txPackets</td>
+</tr>
+<tr>
+<td style="text-align: left;">Multicast queue depth</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/mcCurrQueueDepth</td>
+</tr>
+<tr>
+<td style="text-align: left;">Multicast dropped bytes count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/mcDropBytes</td>
+</tr>
+<tr>
+<td style="text-align: left;">Multicast dropped packet count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/mcDropPackets</td>
+</tr>
+<tr>
+<td style="text-align: left;">Multicast transmit byte count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/mcTxBytes</td>
+</tr>
+<tr>
+<td style="text-align: left;">Multicast transmit packet count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/mcTxPackets</td>
+</tr>
+<tr>
+<td style="text-align: left;">Priority-based flow control per packet pause received count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/pfcRxPpp</td>
+</tr>
+<tr>
+<td style="text-align: left;">Priority-based flow control per packet pause transmitted count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/pfcTxPpp</td>
+</tr>
+<tr>
+<td style="text-align: left;">Priority-based flow control watchdog queue flushed packets</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/pfcwdFlushedPackets</td>
+</tr>
+<tr>
+<td style="text-align: left;">Priority-based flow control watchdog queue restored count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/pfcwdRestoredCount</td>
+</tr>
+<tr>
+<td style="text-align: left;">Priority-based flow control watchdog queue shutdown count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/pfcwdShutdownCount</td>
+</tr>
+<tr>
+<td style="text-align: left;">Random detect ECN marked packet count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/randEcnMarkedPackets</td>
+</tr>
+<tr>
+<td style="text-align: left;">QOS statistic type</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/statType</td>
+</tr>
+<tr>
+<td style="text-align: left;">Transmit byte count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/txBytes</td>
+</tr>
+<tr>
+<td style="text-align: left;">Unicast current queue depth (bytes)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/ucCurrQueueDepth</td>
+</tr>
+<tr>
+<td style="text-align: left;">Unicast droped bytes count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/ucDropBytes</td>
+</tr>
+<tr>
+<td style="text-align: left;">Unicast droped packet count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/ucDropPackets</td>
+</tr>
+<tr>
+<td style="text-align: left;">Unicast transmit byte count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/ucTxBytes</td>
+</tr>
+<tr>
+<td style="text-align: left;">Unicast transmit packet count</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/System/ipqos-items/queuing-items/policy-items/out-items/intf-items/If-list/queCmap-items/QueuingStats-list/ucTxPackets</td>
+</tr>
+</tbody>
+</table>
+<h2 id="system-hardware">System Hardware<a class="headerlink" href="#system-hardware" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Memory utilized</td>
+<td style="text-align: left;">/components/component/state/memory/utilized</td>
+<td style="text-align: left;">/System/pie-items/modules-items/module-items/Module-list/memory-items/memory_usage-items/memUsed</td>
+</tr>
+<tr>
+<td style="text-align: left;">Memory reserved</td>
+<td style="text-align: left;">/system/memory/state/reserved</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Memory available</td>
+<td style="text-align: left;">/components/component/state/memory/available</td>
+<td style="text-align: left;">/System/pie-items/modules-items/module-items/Module-list/memory-items/memory_usage-items/memFree</td>
+</tr>
+<tr>
+<td style="text-align: left;">Memory total</td>
+<td style="text-align: left;">/system/memory/state/physical</td>
+<td style="text-align: left;">/System/pie-items/modules-items/module-items/Module-list/memory-items/memory_usage-items/memTotal</td>
+</tr>
+<tr>
+<td style="text-align: left;">Component status</td>
+<td style="text-align: left;">/components/component/state/oper-status</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">CPU total average utilization</td>
+<td style="text-align: left;">/system/cpus/cpu/state/total/avg</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">CPU current utilization</td>
+<td style="text-align: left;">/components/component/cpu/utilization/state/instant</td>
+<td style="text-align: left;">/System/procsys-items/syscpusummary-items/syscpu-items/SysCpu-list/total-items/pct</td>
+</tr>
+<tr>
+<td style="text-align: left;">CPU state average utilization</td>
+<td style="text-align: left;">/components/component/cpu/utilization/state/avg</td>
+<td style="text-align: left;">/System/procsys-items/syscpusummary-items/syscpu-items/SysCpu-list/total-items/avg</td>
+</tr>
+<tr>
+<td style="text-align: left;">CPU state minimum utilization</td>
+<td style="text-align: left;">/components/component/cpu/utilization/state/min</td>
+<td style="text-align: left;">/System/procsys-items/syscpusummary-items/syscpu-items/SysCpu-list/total-items/min</td>
+</tr>
+<tr>
+<td style="text-align: left;">CPU state maximum utilization</td>
+<td style="text-align: left;">/components/component/cpu/utilization/state/max</td>
+<td style="text-align: left;">/System/procsys-items/syscpusummary-items/syscpu-items/SysCpu-list/total-items/max</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fan speed</td>
+<td style="text-align: left;">/components/component/fan/state/speed</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Fan state</td>
+<td style="text-align: left;">/openconfig-platform:components/component/fan/state/</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="vlan">VLAN<a class="headerlink" href="#vlan" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Openconfig Model</th>
+<th style="text-align: left;">Native Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">VLAN ID</td>
+<td style="text-align: left;">/network-instances/network-instance/vlans/vlan/state/vlan-id</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "toc.follow"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>
