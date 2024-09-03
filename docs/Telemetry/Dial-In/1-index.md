@@ -15,12 +15,10 @@ Supports the following data structure types:
 Supports the following encoding types:
 
 * JSON
-* GPB Compact
 * GPB Key-Value
 
 Supports the following transport types:
 
-* HTTP
 * gRPC
 
 ## About gRPC
